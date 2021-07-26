@@ -26,7 +26,7 @@ user_name = WebDriverWait(
 assert user_name.text == "user2"
 print(user_name.text)
 time.sleep(1)
-print(f"BEJELENTKEZÉS: {user_name}")
+print(f"BEJELENTKEZÉS: {user_name.text}")
 
 
 # NEW ARTICLE
