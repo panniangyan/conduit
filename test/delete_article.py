@@ -31,8 +31,10 @@ print(user_name.text)
 time.sleep(1)
 print(f"BEJELENTKEZÉS: {user_name.text}")
 
-# modify post
-title_list = []
+
+####################################################################x
+# delete post
+
 #user = browser.find_element_by_xpath('//*[@class="nav-link" and text()="user2"]')
 
 user_name.click()
@@ -41,7 +43,7 @@ old_title = WebDriverWait(
     browser, 5).until(
     EC.visibility_of_element_located((By.XPATH, '//*[@class="preview-link"]/h1'))
 )
-title_list.append(old_title.text)
+
 old_title.click()
 
 delete_article_btn = WebDriverWait(
