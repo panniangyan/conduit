@@ -1,4 +1,5 @@
 import time
+import csv
 import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -29,7 +30,7 @@ class TestConduit(object):
         time.sleep(2)
         print("cookies accepted")
 
-    # # Test_4 REGISTRATION
+    # # Test_1 REGISTRATION
     def test__registration(self):
         user_input = {"name": "test",
                       "email": "user5@hotmail.com",
@@ -93,8 +94,16 @@ class TestConduit(object):
         print(f"SIGN IN: as {user_name.text}")
         time.sleep(1)
 
-    # # Test6 NEW POST
-    def test__add_new_post(self):
+    # # Test_4 DATA LISTING
+    def test__list_data(self):
+        self.test__login()
+
+    # # Test_5 PAGINATION
+    def test__pagination(self):
+        self.test__login()
+
+    # # Test_6 NEW ARTICLE
+    def test__add_new_article(self):
         input_post = ["test", "me", "blabablabal", "key"]
         article_data = ["Article Title", "What's this article about?", "Write your article (in markdown)", "Enter tags"]
 
@@ -121,27 +130,63 @@ class TestConduit(object):
         assert (published_title.text == input_post[0])
         print("New article published:", published_title.text)
 
-        # # Test_7 MODIFY POST (title)
-    def test__modify_post(self):
+    # # Test_7 IMPORT DATA FROM FILE
+    def test__import_data_from_file(self):
         self.test__login()
 
+    # # Test_8 MODIFY POST (title)
+    def test__modify_article(self):
+        self.test__login()
 
+    # # Test_9 DELETE ARTICLE
+    def test__delete_article(self):
+        self.test__login()
 
+    # # Test_10 SAVE DATA
+    def test__save_data_to_file(self):
+        self.test__login()
 
+        user_name = WebDriverWait(
+            self.browser, 5).until(
+            EC.visibility_of_element_located((By.XPATH, '//*[@class="nav-link" and contains(text(),"user2")]'))
+        )
+        user_name.click()
 
-    # Test_11 LOGOUT user2
+        print(user_name.text)
+        extracted_data = []
+        count = 0
+
+        time.sleep(2)
+
+        rows = self.browser.find_elements_by_class_name("article-preview")
+
+        for i in rows:
+            row = {}
+            row["id"] = count + 1
+            row["title"] = self.browser.find_element_by_xpath('//*[@class="article-preview"]/a/h1').text
+            row["text"] = self.browser.find_element_by_xpath('//*[@class="article-preview"]/a/p').text
+            extracted_data.append(row)
+            count = count + 1
+
+        keys = extracted_data[0].keys()
+        with open(f'{user_name.text}_article_list', 'w') as out:
+            dict_writer = csv.DictWriter(out, keys)
+            dict_writer.writerows(extracted_data)
+        time.sleep(2)
+        # assert ???
+
+    # Test_11 LOGOUT (user2)
     def test__logout(self):
         self.test__login()
 
-        logout_btn = self.browser.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[5]/a/i')
-        logout = self.browser.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[5]/a')
-        assert(logout.text == ' Log out')
-        print("Find logout button:", logout.text)
+        logout_btn = self.browser.find_element_by_xpath('//*[@class="nav-link" and contains(text(),"Log out")]')
+        assert(logout_btn.text == ' Log out')
+        print("Find logout button:", logout_btn.text)
         time.sleep(2)
         logout_btn.click()
-        sign_in = self.browser.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[2]/a')
-        assert(sign_in.text == 'Sign in')
-        print("Back to homepage:", sign_in.text)
+        sign_in_btn = self.browser.find_element_by_xpath('//*[@href="#/login"]')
+        assert(sign_in_btn.text == 'Sign in')
+        print("Back to homepage:", sign_in_btn.text)
         time.sleep(2)
         print("LOGGED OUT")
 
