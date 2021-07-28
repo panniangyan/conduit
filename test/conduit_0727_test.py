@@ -169,7 +169,7 @@ class TestConduit(object):
             count = count + 1
 
         keys = extracted_data[0].keys()
-        with open(f'{user_name.text}_article_list', 'w') as out:
+        with open(f'{user_name.text}_article_list.csv', 'w') as out:
             dict_writer = csv.DictWriter(out, keys)
             dict_writer.writerows(extracted_data)
         time.sleep(2)
