@@ -36,32 +36,15 @@ print(f"BEJELENTKEZÉS: {user_name.text}")
 
 # PAGINATION
 
-extracted_data = []
-count = 0
-while True:
-    time.sleep(2)
-    rows = browser.find_elements_by_class_name("article-preview")
-    time.sleep(2)
-    current_page_number = int(browser.find_element_by_xpath('//*[@class="page-item active"]/a').text)
-    print(f"Processing page {current_page_number}..")
-    for i in rows:
-        row = {}
-        row["title"] = browser.find_element_by_xpath('//*[@class="article-preview"]/a/h1').text
-        row["text"] = browser.find_element_by_xpath('//*[@class="article-preview"]/a/p').text
-        extracted_data.append(row)
-        count = count + 1
+page_list = browser.find_elements_by_class_name("page-link")
+for page in page_list:
+    page.click()
+    print(page.text)
 
-    next_page_number = current_page_number + 1
-    print(f"next page {next_page_number}, {current_page_number}..")
-#    next_page_link = browser.find_element_by_xpath(f'//li[@data-test="page-link-{current_page_number + 1}"]/a')
-    if current_page_number - 1 == next_page_number:
-        next_page_link = browser.find_element_by_xpath(f'//li[@data-test="page-link-{next_page_number}"]/a')
-        if NoSuchElementException:
-            break
-        else:
-            next_page_link.click()
 
-print(f"Exiting. Last page: {current_page_number}.")
-print(count)
-pprint.pp(extracted_data)
-print(len(extracted_data))
+last_page = browser.find_element_by_xpath(f'//*[@class="page-item active" and @data-test="page-link-{page.text}"]')
+
+print(last_page.text)
+assert(page.text == last_page.text)
+
+browser.quit()

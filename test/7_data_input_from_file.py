@@ -57,30 +57,25 @@ new_article = browser.find_element_by_xpath('//*[@href="#/editor"]')
 #new_article.click()
 time.sleep(2)
 
-#print(f"{input_post[0]}, placeholder=\"{article_data[1]}\", {len(article_data)}")
-#input_post = ["Hello", "me", "oooooooooooooooooooooooobbbbbbbbbbbbbbbbbb", "key2"]
-#article_data = ["Article Title", "What's this article about?", "Write your article (in markdown)", "Enter tags"]
 
-fill_article = []
-#i = 0
-#j = 0
+#fill_article = []
+
 post_num = len(input_post) - 1
-line_num = len(input_post[0]) - 1
-#print(line_num, post_num)
-#print(4, input_post[4][0], input_post[4][1], input_post[4][2], input_post[4][3])
+line_num = len(input_post[0])
 
 for i in range(1, post_num):
     browser.find_element_by_xpath('//*[@href="#/editor"]').click()
     print(i, input_post[i][0], input_post[i][1], input_post[i][2], input_post[i][3])
     time.sleep(2)
     for j in range(0, line_num):
-        fill = browser.find_element_by_xpath(f'//*[@placeholder="{input_post[0][j]}"]').send_keys(input_post[i][j])
-        fill_article.append(fill)
+        browser.find_element_by_xpath(f'//*[@placeholder="{input_post[0][j]}"]').send_keys(input_post[i][j])
+        #fill_article.append(fill)
     #print(i, input_post[i][0], input_post[i][1], input_post[i][2], input_post[i][3])
     time.sleep(2)
-    publish_btn = browser.find_element_by_xpath('//*[@id="app"]/div/div/div/div/form/button').click()
-   # publish_btn = WebDriverWait(browser, 5).until(EC.visibility_of_element_located((By.XPATH, '//button[1]'))).click()
+#    publish_btn = browser.find_element_by_xpath('//*[@id="app"]/div/div/div/div/form/button').click()
+    publish_btn = WebDriverWait(browser, 5).until(EC.visibility_of_element_located((By.XPATH, '//button[1]'))).click()
     time.sleep(2)
+
 
 
 #    print(i, input_post[i][j])

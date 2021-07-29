@@ -66,10 +66,14 @@ pprint.pp(extracted_data)
 print(len(extracted_data))
 keys = extracted_data[0].keys()
 
-with open(f'{user_name.text}_article_list', 'w') as out:
+i =0
+with open(f'{user_name.text}_article_list.csv', 'w') as out:
     dict_writer = csv.DictWriter(out, keys)
     dict_writer.writerows(extracted_data)
+    i = i +1
 
 time.sleep(2)
+print("i", i)
+
 
 browser.quit()

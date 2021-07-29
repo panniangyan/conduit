@@ -11,8 +11,17 @@ browser.get("http://localhost:1667")
 
 browser.maximize_window()
 
-
-browser.find_element_by_xpath('//*[@id="cookie-policy-panel"]/div/div[2]/button[2]/div').click()
 time.sleep(2)
 
-print("cookies accepted")
+accept_btn = browser.find_element_by_xpath('//button[contains (.,"I accept!")]')
+print(accept_btn.text)
+accept_btn.click()
+time.sleep(2)
+list_btn = browser.find_elements_by_xpath('//button')
+assert(browser.find_elements_by_xpath('//button') == [])
+
+
+
+print("cookies accepted", list_btn)
+
+browser.quit()

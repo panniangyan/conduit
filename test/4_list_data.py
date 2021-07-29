@@ -47,20 +47,29 @@ extracted_data = []
 count = 0
 
 time.sleep(2)
-
+row = {}
 rows = browser.find_elements_by_class_name("article-preview")
+print(len(rows))
 
-for i in rows:
-    row = {}
-    row["id"] = count + 1
-    row["title"] = browser.find_element_by_xpath('//*[@class="article-preview"]/a/h1').text
-    row["text"] = browser.find_element_by_xpath('//*[@class="article-preview"]/a/p').text
+#print(rows)
+time.sleep(2)
+while count < len(rows):
+    row["count"]["id"] = count
+    row["count"]["title"] = browser.find_element_by_xpath('//*[@class="article-preview"]/a/h1').text
+    row["count"]["user"] = browser.find_element_by_xpath('//*[@class="info"]/a').text
+    row["count"]["date"] = browser.find_element_by_class_name("date").text
+    row["count"]["text"] = browser.find_element_by_xpath('//*[@class="article-preview"]/a/p').text
+    row["count"]["tag"] = browser.find_element_by_xpath('//*[@class="tag-list"]/a').text
     extracted_data.append(row)
     count = count + 1
+    print(row["count"]["id"], row["count"]["title"], row["count"]["date"], row["count"]["user"], )
+
+for i in rows:
+    print(browser.find_element_by_xpath('//*[@class="article-preview"]/a/h1').text)
 
 
 print(count)
-pprint.pp(extracted_data)
+print(extracted_data)
 print(len(extracted_data))
 
 time.sleep(2)
