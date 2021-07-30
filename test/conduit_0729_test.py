@@ -154,6 +154,7 @@ class TestConduit(object):
         self.test__login()
         title_list = []
         title = "OhLALA"
+        title_list.append(title)
         WebDriverWait(self.browser, 5).until(
             EC.visibility_of_element_located((By.XPATH, '//*[@href="#/@user2/"]'))
         ).click()
@@ -161,11 +162,9 @@ class TestConduit(object):
         old_title = WebDriverWait(self.browser, 10).until(
             EC.visibility_of_element_located((By.XPATH, '//*[@class="preview-link"]/h1'))
         )
-        title_list.extend((old_title.text, title))
-#        title_list.append(old_title)
-#        title_list.append(title)
+        title_list.append(old_title)
         old_title.click()
-        time.sleep(2)
+        time.sleep(4)
         WebDriverWait(self.browser, 10).until(
             EC.visibility_of_element_located((By.XPATH, '//*[@class="article-meta"]/span/a'))
         ).click()
@@ -184,9 +183,9 @@ class TestConduit(object):
         )
         title_list.append(new_post_title.text)
         time.sleep(2)
-        print(f"Test_8 DATA MODIFICATION: article title changed: {title_list[0]} -> {title_list[2]} (input: {title[1]} ")
+        print(f"Test_8 DATA MODIFICATION: article title changed: {title_list[1]} -> {title_list[2]} (input: {title[0]}")
         assert (new_post_title.text == title)
-        print(f"Test_8 DATA MODIFICATION: article title changed: {title_list[0]} -> {title_list[2]} (input: {title[1]}")
+        print(f"Test_8 DATA MODIFICATION: article title changed: {title_list[1]} -> {title_list[2]} (input: {title[0]}")
         time.sleep(1)
 
     # # Test_9 DELETE ARTICLE
@@ -218,6 +217,7 @@ class TestConduit(object):
         )
         user_name.click()
 #        print(user_name.text)
+#        out_file = "{user_name.text}_title.csv"
         time.sleep(2)
         title = self.browser.find_element_by_xpath('//*[@class="article-preview"]/a/h1').text
 
@@ -226,7 +226,10 @@ class TestConduit(object):
         time.sleep(2)
         print("Test_9 WRITE OUT TO FILE", title)
         # assert
-#        print(dict_writer[:-1], extracted_data[:-1])
+        with open(f'{user_name.text}_title.csv', 'r') as file:
+            assert(file.read() == title)
+        print(f"Test_10: WRITE TO FILE {user_name}_title.csv")
+#
 
     # Test_11 LOGOUT (user2)
     def test__logout(self):
