@@ -39,7 +39,9 @@ print(f"BEJELENTKEZÉS: {user_name.text}")
 #input_post = ["Hello", "me", "oooooooooooooooooooooooobbbbbbbbbbbbbbbbbb", "key2"]
 #article_data = ["Article Title", "What's this article about?", "Write your article (in markdown)", "Enter tags"]
 
-with open('input_article.csv', 'r') as data:
+input_file = 'input_article.csv'
+
+with open(input_file, 'r') as data:
     csv_reader = reader(data)
     # Get all rows of csv from csv_reader object as list of tuples
     input_post = list(map(tuple, csv_reader))

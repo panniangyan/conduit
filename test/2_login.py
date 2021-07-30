@@ -31,4 +31,3 @@ print(user_name.text)
 time.sleep(1)
 print(f"BEJELENTKEZÉS: {user_name.text}")
 
-browser.quit()

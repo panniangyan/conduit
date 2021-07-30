@@ -1,17 +1,22 @@
 from selenium import webdriver
 import time
+import pprint
+import csv
+from bs4 import BeautifulSoup as bs
+from selenium.common.exceptions import NoSuchElementException
+
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-import urllib
-
 
 browser = webdriver.Chrome("/usr/bin/chromedriver")
 browser.get("http://localhost:1667")
-
 browser.maximize_window()
-browser.find_element_by_xpath('//*[@id="cookie-policy-panel"]/div/div[2]/button[2]/div').click()
 
+# # ACCEPT COOKIES
+browser.find_element_by_xpath('//button[2]').click()
+
+# # LOGIN
 browser.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[2]/a').click()
 email = browser.find_element_by_xpath('//*[@id="app"]/div/div/div/div/form/fieldset[1]/input')
 password = browser.find_element_by_xpath('//*[@id="app"]/div/div/div/div/form/fieldset[2]/input')
@@ -24,7 +29,6 @@ time.sleep(1)
 user_name = WebDriverWait(
     browser, 5).until(
     EC.visibility_of_element_located((By.XPATH, '//*[@id="app"]/nav/div/ul/li[4]/a'))
-#    EC.visibility_of_element_located((By.XPATH, '//*[@class="nav-link" and text()="user2"]'))
 )
 assert user_name.text == "user2"
 print(user_name.text)
@@ -32,29 +36,25 @@ time.sleep(1)
 print(f"BEJELENTKEZÉS: {user_name.text}")
 
 
-####################################################################x
-# delete post
+### LIST DATA (user ARTICLES)
 
-#user = browser.find_element_by_xpath('//*[@class="nav-link" and text()="user2"]')
-
-user_name.click()
-time.sleep(2)
-old_title = WebDriverWait(
-    browser, 5).until(
-    EC.visibility_of_element_located((By.XPATH, '//*[@class="preview-link"]/h1'))
+user_name = WebDriverWait(
+            browser, 5).until(
+            EC.visibility_of_element_located((By.XPATH, '//*[@class="nav-link" and contains(text(),"user2")]'))
 )
-old_title.click()
-time.sleep(4)
-delete_article_btn = WebDriverWait(
-    browser, 5).until(
-    EC.visibility_of_element_located((By.XPATH, '//*[@id="app"]/div/div[1]/div/div/span/button/span'))
-).click()
-time.sleep(2)
-browser.refresh()
-time.sleep(2)
-# deleted the article. Going home
-#assert(browser.current_url == 'http://localhost:1667/#/')
+user_name.click()
 
-print(browser.current_url)
 
-browser.quit()
+
+
+
+
+
+i =0
+with open(f'{user_name.text}_article_list.csv', 'w') as out:
+    dict_writer = csv.DictWriter(out, keys)
+    dict_writer.writerows(extracted_data)
+    i = i +1
+
+time.sleep(2)
+print("i", i)

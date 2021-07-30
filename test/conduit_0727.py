@@ -1,5 +1,6 @@
 import time
 import csv
+from csv import reader
 import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -102,6 +103,12 @@ class TestConduit(object):
     def test__pagination(self):
         self.test__login()
 
+        page_list = self.browser.find_elements_by_class_name("page-link")
+        for page in page_list:
+            page.click()
+            print(page.text)
+
+
     # # Test_6 NEW ARTICLE
     def test__add_new_article(self):
         input_post = ["test", "me", "blabablabal", "key"]
@@ -113,16 +120,12 @@ class TestConduit(object):
 
         fill_article = []
         i = 0
-        while i < 3:
+        while i < len(input_post):
             fill = self.browser.find_element_by_xpath(f'//*[@placeholder="{article_data[i]}"]').send_keys(input_post[i])
             fill_article.append(fill)
             i = i + 1
-
-        WebDriverWait(
-            self.browser, 5).until(
-            EC.visibility_of_element_located(
-                (By.XPATH, '//button[1]'))
-        ).click()
+        WebDriverWait(self.browser, 5).until(
+            EC.visibility_of_element_located((By.XPATH, '//button[1]'))).click()
         time.sleep(2)
 
         # assert
@@ -133,6 +136,25 @@ class TestConduit(object):
     # # Test_7 IMPORT DATA FROM FILE
     def test__import_data_from_file(self):
         self.test__login()
+
+        with open('input_article.csv', 'r') as data:
+            csv_reader = reader(data)
+            # Get all rows of csv from csv_reader object as list of tuples
+            input_post = list(map(tuple, csv_reader))
+
+        for i in range(1, len(input_post) - 1): # every line
+            self.browser.find_element_by_xpath('//*[@href="#/editor"]').click()
+            time.sleep(2)
+            for j in range(0, len(input_post[0])): # fill the form
+                self.browser.find_element_by_xpath(f'//*[@placeholder="{input_post[0][j]}"]').send_keys(input_post[i][j])
+            time.sleep(2)
+            WebDriverWait(self.browser, 5).until(
+                EC.visibility_of_element_located((By.XPATH, '//button[1]'))).click()
+            time.sleep(2)
+            # assert
+            published_title = self.browser.find_element_by_xpath('//*[@class="container"]/h1')
+            assert (published_title.text == input_post[i][0])
+            print("New article published:", published_title.text)
 
     # # Test_8 MODIFY POST (title)
     def test__modify_article(self):

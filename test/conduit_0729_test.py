@@ -1,5 +1,6 @@
 import time
 import csv
+import webbrowser
 from csv import reader
 import pytest
 from selenium import webdriver
@@ -13,17 +14,18 @@ class TestConduit(object):
         self.browser = webdriver.Chrome("/usr/bin/chromedriver")
         self.browser.get("http://localhost:1667")
         self.browser.maximize_window()
+        time.sleep(1)
 
     def teardown(self):
         self.browser.quit()
 
     # # Test_3 ACCEPT COOKIES
     def test__accept_cookies(self):
-        time.sleep(2)
         self.browser.find_element_by_xpath('//button[contains (.,"I accept!")]').click()
-        assert (self.browser.find_elements_by_xpath('//button') == [])
         time.sleep(2)
-        print("TEST_3: cookies accepted")
+        assert (self.browser.find_elements_by_xpath('//button') == [])
+        time.sleep(1)
+        print("Test_3: cookies accepted")
 
     # # Test_1 REGISTRATION
     def test__registration(self):
@@ -38,7 +40,7 @@ class TestConduit(object):
         self.browser.find_element_by_xpath('//*[@placeholder="Username"]').send_keys(user_input["name"])
         self.browser.find_element_by_xpath('//*[@placeholder="Email"]').send_keys(user_input["email"])
         self.browser.find_element_by_xpath('//*[@placeholder="Password"]').send_keys(user_input["password"])
-        time.sleep(2)
+        time.sleep(1)
         self.browser.find_element_by_xpath('//button[1]').click()
         time.sleep(2)
         # assert
@@ -47,17 +49,17 @@ class TestConduit(object):
         welcome = WebDriverWait(self.browser, 5).until(
             EC.visibility_of_element_located((By.CSS_SELECTOR, ".swal-title"))
         )
-        if welcome.text == ref_text_success:
-            print(self.browser.find_element_by_css_selector(".swal-text").text)
-        elif welcome.text == ref_text_fail:
-            print(self.browser.find_element_by_css_selector(".swal-text").text)
-#        assert (welcome.text == ref_text_success)
+        #assert (welcome.text == ref_text_success)
         assert (welcome.text == ref_text_fail)
-        print("Test_1 SIGN UP: ", welcome.text, end="")
+        print("Test_1 SIGNED UP: ", welcome.text, end=" ")
+        if welcome.text == ref_text_success:
+            print(self.browser.find_element_by_css_selector(".swal-text").text, sep=" ")
+        elif welcome.text == ref_text_fail:
+            print(self.browser.find_element_by_css_selector(".swal-text").text, sep=" ")
         for k, v in user_input.items():
-            print(k, v, sep=",", end=";")
+            print(k, v, sep=": ", end=";")
         self.browser.find_element_by_xpath('//*[@class="swal-button swal-button--confirm"]').click()
-        time.sleep(2)
+        time.sleep(1)
 
     # # Test_2 LOGIN user2
     def test__login(self):
@@ -78,7 +80,7 @@ class TestConduit(object):
             EC.visibility_of_element_located((By.XPATH, '//*[@class="nav-link" and contains(text(),"user2")]'))
         )
         assert user_name.text == "user2"
-        print(f"Test2 SIGN IN: as {user_name.text}")
+        print(f"Test_2 SIGNED IN: as {user_name.text}")
         time.sleep(1)
 
     # # Test_4 DATA LISTING
@@ -96,7 +98,8 @@ class TestConduit(object):
         # assert
         last_page = self.browser.find_element_by_xpath(f'//*[@class="page-item active" and @data-test="page-link-{page.text}"]')
         assert (page.text == last_page.text)
-        print("Test5 PAGINATION: ", last_page.text)
+        print(f"Test_5 PAGINATION: last page: #{last_page.text}")
+        time.sleep(1)
 
     # # Test_6 NEW ARTICLE
     def test__add_new_article(self):
@@ -106,7 +109,6 @@ class TestConduit(object):
         self.test__login()
         self.browser.find_element_by_xpath('//*[@href="#/editor"]').click()
         time.sleep(2)
-
         fill_article = []
         i = 0
         while i < len(input_post):
@@ -120,22 +122,21 @@ class TestConduit(object):
         published_title = self.browser.find_element_by_xpath('//*[@class="container"]/h1')
         publish_date = self.browser.find_element_by_class_name("date")
         assert (published_title.text == input_post[0])
-        print("Test_6 New article published:", published_title.text, publish_date.text)
+        print(f"Test_6 New article published with title: \" {published_title.text} \" on {publish_date.text}")
+        time.sleep(1)
 
     # # Test_7 IMPORT DATA FROM FILE
     def test__import_data_from_file(self):
         self.test__login()
         input_file = 'input_article.csv'
-
         with open(input_file, 'r') as data:
             csv_reader = reader(data)
-            # Get all rows of csv from csv_reader object as list of tuples
             input_post = list(map(tuple, csv_reader))
 
-        for i in range(1, len(input_post) - 1): # every line
+        for i in range(1, len(input_post) - 1):     # every line
             self.browser.find_element_by_xpath('//*[@href="#/editor"]').click()
             time.sleep(2)
-            for j in range(0, len(input_post[0])): # fill the form
+            for j in range(0, len(input_post[0])):  # fill the form
                 self.browser.find_element_by_xpath(f'//*[@placeholder="{input_post[0][j]}"]').send_keys(input_post[i][j])
             time.sleep(2)
             WebDriverWait(self.browser, 5).until(
@@ -144,59 +145,100 @@ class TestConduit(object):
             # assert
             published_title = self.browser.find_element_by_xpath('//*[@class="container"]/h1')
             assert (published_title.text == input_post[i][0])
-        print(f"Test_7: {len(input_post)} new articles published from file")
+#            print(published_title.text, input_post[i][0])
+        print(f"Test_7: {len(input_post)} new articles published from file: {input_file}")
+        time.sleep(1)
 
     # # Test_8 MODIFY POST (title)
     def test__modify_article(self):
         self.test__login()
+        title_list = []
+        title = "OhLALA"
+        WebDriverWait(self.browser, 5).until(
+            EC.visibility_of_element_located((By.XPATH, '//*[@href="#/@user2/"]'))
+        ).click()
+        time.sleep(4)
+        old_title = WebDriverWait(self.browser, 10).until(
+            EC.visibility_of_element_located((By.XPATH, '//*[@class="preview-link"]/h1'))
+        )
+        title_list.extend((old_title.text, title))
+#        title_list.append(old_title)
+#        title_list.append(title)
+        old_title.click()
+        time.sleep(2)
+        WebDriverWait(self.browser, 10).until(
+            EC.visibility_of_element_located((By.XPATH, '//*[@class="article-meta"]/span/a'))
+        ).click()
+        time.sleep(2)
+        new_title = WebDriverWait(self.browser, 5).until(
+            EC.visibility_of_element_located((By.XPATH, '//*[@placeholder="Article Title"]'))
+        )
+        new_title.clear()
+        new_title.send_keys(title)
+        time.sleep(2)
+        self.browser.find_element_by_xpath('//button[@type="submit"]').click()
+        time.sleep(4)
+        # assert
+        new_post_title = WebDriverWait(self.browser, 10).until(
+            EC.visibility_of_element_located((By.XPATH, '//*[@class="container"]/h1'))
+        )
+        title_list.append(new_post_title.text)
+        time.sleep(2)
+        print(f"Test_8 DATA MODIFICATION: article title changed: {title_list[0]} -> {title_list[2]} (input: {title[1]} ")
+        assert (new_post_title.text == title)
+        print(f"Test_8 DATA MODIFICATION: article title changed: {title_list[0]} -> {title_list[2]} (input: {title[1]}")
+        time.sleep(1)
 
     # # Test_9 DELETE ARTICLE
     def test__delete_article(self):
         self.test__login()
+        WebDriverWait(self.browser, 5).until(
+            EC.visibility_of_element_located((By.XPATH, '//*[@href="#/@user2/"]'))
+        ).click()
+        time.sleep(4)
+        WebDriverWait(self.browser, 10).until(
+            EC.visibility_of_element_located((By.XPATH, '//*[@class="preview-link"]/h1'))
+        ).click()
+        time.sleep(4)
+        deleted_url = self.browser.current_url
+        WebDriverWait(self.browser, 5).until(
+            EC.visibility_of_element_located((By.XPATH, '//*[@id="app"]/div/div[1]/div/div/span/button/span'))
+        ).click()
+        time.sleep(4)
+        # assert
+        assert(self.browser.current_url == 'http://localhost:1667/#/')
+        print(f"Test_9: DELETED ARTICLE url: {deleted_url}")
+        time.sleep(1)
 
     # # Test_10 SAVE DATA
     def test__save_data_to_file(self):
         self.test__login()
-
-        user_name = WebDriverWait(
-            self.browser, 5).until(
+        user_name = WebDriverWait(self.browser, 5).until(
             EC.visibility_of_element_located((By.XPATH, '//*[@class="nav-link" and contains(text(),"user2")]'))
         )
         user_name.click()
-
-        print(user_name.text)
-        extracted_data = []
-        count = 0
+#        print(user_name.text)
         time.sleep(2)
-        rows = self.browser.find_elements_by_class_name("article-preview")
-        for i in rows:
-            row = {}
-            row["id"] = count + 1
-            row["title"] = self.browser.find_element_by_xpath('//*[@class="article-preview"]/a/h1').text
-            row["text"] = self.browser.find_element_by_xpath('//*[@class="article-preview"]/a/p').text
-            extracted_data.append(row)
-            count = count + 1
+        title = self.browser.find_element_by_xpath('//*[@class="article-preview"]/a/h1').text
 
-        keys = extracted_data[0].keys()
-        with open(f'{user_name.text}_article_list.csv', 'w') as out:
-            dict_writer = csv.DictWriter(out, keys)
-            dict_writer.writerows(extracted_data)
+        with open(f'{user_name.text}_title.csv', 'w') as out:
+            out.write(title)
         time.sleep(2)
+        print("Test_9 WRITE OUT TO FILE", title)
         # assert
 #        print(dict_writer[:-1], extracted_data[:-1])
 
     # Test_11 LOGOUT (user2)
     def test__logout(self):
         self.test__login()
-
         logout_btn = self.browser.find_element_by_xpath('//*[@class="nav-link" and contains(text(),"Log out")]')
         assert(logout_btn.text == ' Log out')
-        print("Find logout button:", logout_btn.text)
-        time.sleep(2)
+        print("Found logout button:", logout_btn.text)
         logout_btn.click()
+        time.sleep(2)
         sign_in_btn = self.browser.find_element_by_xpath('//*[@href="#/login"]')
         assert(sign_in_btn.text == 'Sign in')
-        print("Test_11 LOGGED OUT Back to homepage:", sign_in_btn.text)
+        print("Test_11 LOGGED OUT, Back to homepage:", sign_in_btn.text)
         time.sleep(2)
 
 
