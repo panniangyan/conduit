@@ -1,6 +1,5 @@
 import time
 import csv
-import webbrowser
 from csv import reader
 import pytest
 from selenium import webdriver
@@ -86,19 +85,26 @@ class TestConduit(object):
     # # Test_4 DATA LISTING
     def test__list_data(self):
         self.test__login()
+        active_links = self.browser.find_elements_by_xpath('//*[@href="#/"]')
+        # assert
+        assert(self.browser.find_element_by_xpath('//*[@href="#/"]') == active_links[0])
+        print("Test_4: DATA LISTING - active links on conduit homepage", self.browser.current_url)
+        for k in active_links:
+            print(k.text)
 
     # # Test_5 PAGINATION
     def test__pagination(self):
         self.test__login()
         # pagination on global feed
+        print(f"Test_5 PAGINATION:", end=" ")
         page_list = self.browser.find_elements_by_class_name("page-link")
         for page in page_list:
             page.click()
-#            print(page.text)
+            print(page.text, sep=", ", end=" ")
         # assert
         last_page = self.browser.find_element_by_xpath(f'//*[@class="page-item active" and @data-test="page-link-{page.text}"]')
         assert (page.text == last_page.text)
-        print(f"Test_5 PAGINATION: last page: #{last_page.text}")
+        print(f"last page: #{last_page.text}")
         time.sleep(1)
 
     # # Test_6 NEW ARTICLE
@@ -122,7 +128,7 @@ class TestConduit(object):
         published_title = self.browser.find_element_by_xpath('//*[@class="container"]/h1')
         publish_date = self.browser.find_element_by_class_name("date")
         assert (published_title.text == input_post[0])
-        print(f"Test_6 New article published with title: \" {published_title.text} \" on {publish_date.text}")
+        print(f"Test_6 New article published with title: \" {published_title.text} \" on {publish_date.text} at {self.browser.current_url}")
         time.sleep(1)
 
     # # Test_7 IMPORT DATA FROM FILE
@@ -132,7 +138,7 @@ class TestConduit(object):
         with open(input_file, 'r') as data:
             csv_reader = reader(data)
             input_post = list(map(tuple, csv_reader))
-
+        print(f"Test_7: {len(input_post)} new articles published from file: {input_file}", end=" ")
         for i in range(1, len(input_post) - 1):     # every line
             self.browser.find_element_by_xpath('//*[@href="#/editor"]').click()
             time.sleep(2)
@@ -145,8 +151,7 @@ class TestConduit(object):
             # assert
             published_title = self.browser.find_element_by_xpath('//*[@class="container"]/h1')
             assert (published_title.text == input_post[i][0])
-#            print(published_title.text, input_post[i][0])
-        print(f"Test_7: {len(input_post)} new articles published from file: {input_file}")
+            print(f"{published_title.text}, {input_post[i][0]}", sep=", ", end="; ")
         time.sleep(1)
 
     # # Test_8 MODIFY POST (title)
@@ -162,30 +167,29 @@ class TestConduit(object):
         old_title = WebDriverWait(self.browser, 10).until(
             EC.visibility_of_element_located((By.XPATH, '//*[@class="preview-link"]/h1'))
         )
-        title_list.append(old_title)
+        title_list.append(old_title.text)
         old_title.click()
         time.sleep(4)
         WebDriverWait(self.browser, 10).until(
             EC.visibility_of_element_located((By.XPATH, '//*[@class="article-meta"]/span/a'))
         ).click()
         time.sleep(2)
-        new_title = WebDriverWait(self.browser, 5).until(
+        new_title = WebDriverWait(self.browser, 10).until(
             EC.visibility_of_element_located((By.XPATH, '//*[@placeholder="Article Title"]'))
         )
         new_title.clear()
         new_title.send_keys(title)
         time.sleep(2)
         self.browser.find_element_by_xpath('//button[@type="submit"]').click()
-        time.sleep(4)
+        time.sleep(5)
         # assert
         new_post_title = WebDriverWait(self.browser, 10).until(
             EC.visibility_of_element_located((By.XPATH, '//*[@class="container"]/h1'))
         )
         title_list.append(new_post_title.text)
         time.sleep(2)
-        print(f"Test_8 DATA MODIFICATION: article title changed: {title_list[1]} -> {title_list[2]} (input: {title[0]}")
-        assert (new_post_title.text == title)
-        print(f"Test_8 DATA MODIFICATION: article title changed: {title_list[1]} -> {title_list[2]} (input: {title[0]}")
+        assert (title_list[2] == title_list[0])
+        print(f"Test_8 DATA MODIFICATION: article title changed: {title_list[1]} -> {title_list[2]} (input: {title_list[0]})")
         time.sleep(1)
 
     # # Test_9 DELETE ARTICLE
@@ -203,7 +207,8 @@ class TestConduit(object):
         WebDriverWait(self.browser, 5).until(
             EC.visibility_of_element_located((By.XPATH, '//*[@id="app"]/div/div[1]/div/div/span/button/span'))
         ).click()
-        time.sleep(4)
+        time.sleep(5)
+        self.browser.refresh()
         # assert
         assert(self.browser.current_url == 'http://localhost:1667/#/')
         print(f"Test_9: DELETED ARTICLE url: {deleted_url}")
@@ -216,20 +221,16 @@ class TestConduit(object):
             EC.visibility_of_element_located((By.XPATH, '//*[@class="nav-link" and contains(text(),"user2")]'))
         )
         user_name.click()
-#        print(user_name.text)
 #        out_file = "{user_name.text}_title.csv"
         time.sleep(2)
         title = self.browser.find_element_by_xpath('//*[@class="article-preview"]/a/h1').text
-
         with open(f'{user_name.text}_title.csv', 'w') as out:
             out.write(title)
         time.sleep(2)
-        print("Test_9 WRITE OUT TO FILE", title)
         # assert
         with open(f'{user_name.text}_title.csv', 'r') as file:
             assert(file.read() == title)
-        print(f"Test_10: WRITE TO FILE {user_name}_title.csv")
-#
+        print(f"Test_10: WRITE TO FILE {user_name.text}_title.csv, {title}")
 
     # Test_11 LOGOUT (user2)
     def test__logout(self):
