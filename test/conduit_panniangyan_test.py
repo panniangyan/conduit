@@ -10,7 +10,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 class TestConduit(object):
     def setup(self):
-        self.browser = webdriver.Chrome("/usr/bin/chromedriver")
+        self.browser = webdriver.Chrome()
         self.browser.get("http://localhost:1667")
         self.browser.maximize_window()
         time.sleep(1)
