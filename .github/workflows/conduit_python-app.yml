@@ -30,8 +30,8 @@ jobs:
       run: |
         sudo apt install google-chrome-stable
     - run: docker-compose up -d
-    - name: sleep for 100 seconds
-      run: sleep 100s
+    - name: sleep for 45 seconds
+      run: sleep 45s
       shell: bash
       
     - name: Install seleniumbase
