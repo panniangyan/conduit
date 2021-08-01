@@ -12,9 +12,9 @@ from selenium.webdriver.chrome.options import Options
 from pathlib import Path
 
 # In order for ChromeDriverManager to work you must pip install it in your own environment.
-browser_options = Options()
-browser_options.headless = True
-driver = webdriver.Chrome(ChromeDriverManager().install(), options=browser_options)
+driver_options = Options()
+driver_options.headless = True
+browser = webdriver.Chrome(ChromeDriverManager().install(), options=driver_options)
 
 
 class TestConduit(object):
