@@ -1,0 +1,111 @@
+[ {
+  "uid" : "5a97aa97725a413c",
+  "name" : "test__logout",
+  "time" : {
+    "start" : 1627827075231,
+    "stop" : 1627827075231,
+    "duration" : 0
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "a84747d23ddef301",
+  "name" : "test__pagination",
+  "time" : {
+    "start" : 1627827069247,
+    "stop" : 1627827069247,
+    "duration" : 0
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "4dd07acb3840782a",
+  "name" : "test__modify_article",
+  "time" : {
+    "start" : 1627827072744,
+    "stop" : 1627827072744,
+    "duration" : 0
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "ad0b83656f45c04d",
+  "name" : "test__delete_article",
+  "time" : {
+    "start" : 1627827072913,
+    "stop" : 1627827072913,
+    "duration" : 0
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "b8d72a427223736e",
+  "name" : "test__add_new_article",
+  "time" : {
+    "start" : 1627827070405,
+    "stop" : 1627827070405,
+    "duration" : 0
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "1131cb47a9095d9e",
+  "name" : "test__login",
+  "time" : {
+    "start" : 1627827066930,
+    "stop" : 1627827066930,
+    "duration" : 0
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "8b9482fd3ef6d0ca",
+  "name" : "test__registration",
+  "time" : {
+    "start" : 1627827065771,
+    "stop" : 1627827065771,
+    "duration" : 0
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "f82dcc0df2e3435b",
+  "name" : "test__import_data_from_file",
+  "time" : {
+    "start" : 1627827071565,
+    "stop" : 1627827071565,
+    "duration" : 0
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "585577795a3130fc",
+  "name" : "test__accept_cookies",
+  "time" : {
+    "start" : 1627827064176,
+    "stop" : 1627827064176,
+    "duration" : 0
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "9e3fba6f8130309b",
+  "name" : "test__save_data_to_file",
+  "time" : {
+    "start" : 1627827074072,
+    "stop" : 1627827074072,
+    "duration" : 0
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "609efaba1a0f583d",
+  "name" : "test__list_data",
+  "time" : {
+    "start" : 1627827068087,
+    "stop" : 1627827068087,
+    "duration" : 0
+  },
+  "status" : "broken",
+  "severity" : "normal"
+} ]
