@@ -35,11 +35,12 @@ jobs:
       shell: bash
       
     - name: Install seleniumbase
-      run: pip install seleniumbase
+      run: |
+        pip install seleniumbase
       
     - name: Install chromedriver
       run: |
-        seleniumbase install chromedriver  
+        sbase install chromedriver latest
       
     - name: Test with pytest
       run: |
