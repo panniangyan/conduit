@@ -1,1 +1,14 @@
+A_001 cookie elfogadás
+A_002 regisztráció
+A_003 bejelentkezés
+A_004 cikkek listázása (saját)
+A_005 több oldalas lista bejárása
+A_006 új cikk létrehozása
+A_007 új cikk létrehozása ismételten, fájlból
+A_008 cikk szerkesztése
+A_009 cikk törlése
+A_011 kijelentkezés
 
+
++1:
+A_010 cikk cime lementése felületről
