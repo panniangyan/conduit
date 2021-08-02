@@ -1,0 +1,223 @@
+{
+  "uid" : "77d6deba6d194c25",
+  "name" : "test__logout",
+  "fullName" : "test.conduit_panniangyan_test.TestConduit#test__logout",
+  "historyId" : "abb25b77cdad96442fb8c33754c6caa9",
+  "time" : {
+    "start" : 1627899221042,
+    "stop" : 1627899221042,
+    "duration" : 0
+  },
+  "status" : "broken",
+  "statusMessage" : "TypeError: setup() takes 0 positional arguments but 1 was given",
+  "statusTrace" : "cls = <class '_pytest.runner.CallInfo'>\nfunc = <function call_runtest_hook.<locals>.<lambda> at 0x7f6d111c49d0>\nwhen = 'setup'\nreraise = (<class '_pytest.outcomes.Exit'>, <class 'KeyboardInterrupt'>)\n\n    @classmethod\n    def from_call(\n        cls,\n        func: \"Callable[[], TResult]\",\n        when: \"Literal['collect', 'setup', 'call', 'teardown']\",\n        reraise: Optional[\n            Union[Type[BaseException], Tuple[Type[BaseException], ...]]\n        ] = None,\n    ) -> \"CallInfo[TResult]\":\n        excinfo = None\n        start = timing.time()\n        precise_start = timing.perf_counter()\n        try:\n>           result: Optional[TResult] = func()\n\n/opt/hostedtoolcache/Python/3.9.5/x64/lib/python3.9/site-packages/_pytest/runner.py:311: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/opt/hostedtoolcache/Python/3.9.5/x64/lib/python3.9/site-packages/_pytest/runner.py:255: in <lambda>\n    lambda: ihook(item=item, **kwds), when=when, reraise=reraise\n/opt/hostedtoolcache/Python/3.9.5/x64/lib/python3.9/site-packages/pluggy/hooks.py:286: in __call__\n    return self._hookexec(self, self.get_hookimpls(), kwargs)\n/opt/hostedtoolcache/Python/3.9.5/x64/lib/python3.9/site-packages/pluggy/manager.py:93: in _hookexec\n    return self._inner_hookexec(hook, methods, kwargs)\n/opt/hostedtoolcache/Python/3.9.5/x64/lib/python3.9/site-packages/pluggy/manager.py:84: in <lambda>\n    self._inner_hookexec = lambda hook, methods, kwargs: hook.multicall(\n/opt/hostedtoolcache/Python/3.9.5/x64/lib/python3.9/site-packages/_pytest/nose.py:13: in pytest_runtest_setup\n    call_optional(item.parent.obj, \"setup\")\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nobj = <conduit_panniangyan_test.TestConduit object at 0x7f6d1128b640>\nname = 'setup'\n\n    def call_optional(obj, name):\n        method = getattr(obj, name, None)\n        isfixture = hasattr(method, \"_pytestfixturefunction\")\n        if method is not None and not isfixture and callable(method):\n            # If there's any problems allow the exception to raise rather than\n            # silently ignoring them.\n>           method()\nE           TypeError: setup() takes 0 positional arguments but 1 was given\n\n/opt/hostedtoolcache/Python/3.9.5/x64/lib/python3.9/site-packages/_pytest/nose.py:38: TypeError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "test"
+  }, {
+    "name" : "suite",
+    "value" : "conduit_panniangyan_test"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestConduit"
+  }, {
+    "name" : "host",
+    "value" : "fv-az77-41"
+  }, {
+    "name" : "thread",
+    "value" : "3901-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test.conduit_panniangyan_test"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 16,
+        "skipped" : 0,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 16
+      },
+      "items" : [ {
+        "uid" : "c894d9f7fea15643",
+        "reportUrl" : "https://panniangyan.github.io/conduit/18//#testresult/c894d9f7fea15643",
+        "status" : "broken",
+        "statusDetails" : "TypeError: setup() takes 0 positional arguments but 1 was given",
+        "time" : {
+          "start" : 1627898435616,
+          "stop" : 1627898435616,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "2e6da96b608a1714",
+        "reportUrl" : "https://panniangyan.github.io/conduit/17//#testresult/2e6da96b608a1714",
+        "status" : "broken",
+        "statusDetails" : "urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=52653): Max retries exceeded with url: /session/f04a3cdd168c74da301d0c38b9cb3db9/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fca1be68c40>: Failed to establish a new connection: [Errno 111] Connection refused'))",
+        "time" : {
+          "start" : 1627896380280,
+          "stop" : 1627896380280,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "c874b88e4913994b",
+        "reportUrl" : "https://panniangyan.github.io/conduit/16//#testresult/c874b88e4913994b",
+        "status" : "broken",
+        "statusDetails" : "urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=60017): Max retries exceeded with url: /session/b1a5c94c7bc7022ef76dd2ebb8ba0f70/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1a74ff2250>: Failed to establish a new connection: [Errno 111] Connection refused'))",
+        "time" : {
+          "start" : 1627895214023,
+          "stop" : 1627895214023,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "1761e7b3e983844c",
+        "reportUrl" : "https://panniangyan.github.io/conduit/15//#testresult/1761e7b3e983844c",
+        "status" : "broken",
+        "statusDetails" : "urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=43719): Max retries exceeded with url: /session/91742e4ead70df7aa6cbcad06f4f1bd2/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fe18d2350a0>: Failed to establish a new connection: [Errno 111] Connection refused'))",
+        "time" : {
+          "start" : 1627892997408,
+          "stop" : 1627892997408,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "9eb30bcb4fa94b5a",
+        "reportUrl" : "https://panniangyan.github.io/conduit/14//#testresult/9eb30bcb4fa94b5a",
+        "status" : "broken",
+        "statusDetails" : "AttributeError: 'WebDriver' object has no attribute 'webdriver'",
+        "time" : {
+          "start" : 1627892617413,
+          "stop" : 1627892617413,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "27922f40c31cd6fe",
+        "reportUrl" : "https://panniangyan.github.io/conduit/12//#testresult/27922f40c31cd6fe",
+        "status" : "broken",
+        "statusDetails" : "AttributeError: 'TestConduit' object has no attribute 'browser'",
+        "time" : {
+          "start" : 1627888455682,
+          "stop" : 1627888455682,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "d7c5aedda6a83e1d",
+        "reportUrl" : "https://panniangyan.github.io/conduit/11//#testresult/d7c5aedda6a83e1d",
+        "status" : "broken",
+        "statusDetails" : "AttributeError: 'TestConduit' object has no attribute 'browser'",
+        "time" : {
+          "start" : 1627829932614,
+          "stop" : 1627829932614,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "d88b375186fce930",
+        "reportUrl" : "https://panniangyan.github.io/conduit/10//#testresult/d88b375186fce930",
+        "status" : "broken",
+        "statusDetails" : "AttributeError: 'TestConduit' object has no attribute 'browser'",
+        "time" : {
+          "start" : 1627829830103,
+          "stop" : 1627829830103,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "8a6b991a79c6a24f",
+        "reportUrl" : "https://panniangyan.github.io/conduit/9//#testresult/8a6b991a79c6a24f",
+        "status" : "broken",
+        "statusDetails" : "AttributeError: 'TestConduit' object has no attribute 'browser'",
+        "time" : {
+          "start" : 1627829050033,
+          "stop" : 1627829050033,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "f2c7d2371a032289",
+        "reportUrl" : "https://panniangyan.github.io/conduit/8//#testresult/f2c7d2371a032289",
+        "status" : "broken",
+        "statusDetails" : "AttributeError: 'TestConduit' object has no attribute 'browser'",
+        "time" : {
+          "start" : 1627828717778,
+          "stop" : 1627828717778,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "90e76faa5944704f",
+        "reportUrl" : "https://panniangyan.github.io/conduit/7//#testresult/90e76faa5944704f",
+        "status" : "broken",
+        "statusDetails" : "selenium.common.exceptions.WebDriverException: Message: unknown error: Chrome failed to start: exited abnormally.\n  (unknown error: DevToolsActivePort file doesn't exist)\n  (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)",
+        "time" : {
+          "start" : 1627828262070,
+          "stop" : 1627828262070,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "5a97aa97725a413c",
+        "reportUrl" : "https://panniangyan.github.io/conduit/6//#testresult/5a97aa97725a413c",
+        "status" : "broken",
+        "statusDetails" : "selenium.common.exceptions.WebDriverException: Message: unknown error: Chrome failed to start: exited abnormally.\n  (unknown error: DevToolsActivePort file doesn't exist)\n  (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)",
+        "time" : {
+          "start" : 1627827075231,
+          "stop" : 1627827075231,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "614b720041af45b0",
+        "reportUrl" : "https://panniangyan.github.io/conduit/5//#testresult/614b720041af45b0",
+        "status" : "broken",
+        "statusDetails" : "selenium.common.exceptions.WebDriverException: Message: unknown error: Chrome failed to start: exited abnormally.\n  (unknown error: DevToolsActivePort file doesn't exist)\n  (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)",
+        "time" : {
+          "start" : 1627819962293,
+          "stop" : 1627819962293,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "1e8ea85c0d714098",
+        "reportUrl" : "https://panniangyan.github.io/conduit/4//#testresult/1e8ea85c0d714098",
+        "status" : "broken",
+        "statusDetails" : "selenium.common.exceptions.WebDriverException: Message: unknown error: Chrome failed to start: exited abnormally.\n  (unknown error: DevToolsActivePort file doesn't exist)\n  (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)",
+        "time" : {
+          "start" : 1627818417612,
+          "stop" : 1627818417612,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "6a894b869644cbde",
+        "reportUrl" : "https://panniangyan.github.io/conduit/3//#testresult/6a894b869644cbde",
+        "status" : "broken",
+        "statusDetails" : "selenium.common.exceptions.WebDriverException: Message: unknown error: Chrome failed to start: exited abnormally.\n  (unknown error: DevToolsActivePort file doesn't exist)\n  (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)",
+        "time" : {
+          "start" : 1627818167188,
+          "stop" : 1627818167188,
+          "duration" : 0
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "77d6deba6d194c25.json",
+  "parameterValues" : [ ]
+}
