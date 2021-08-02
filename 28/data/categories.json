@@ -1,0 +1,143 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "selenium.common.exceptions.WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED\n  (Session info: headless chrome=92.0.4515.107)",
+      "children" : [ {
+        "name" : "test__accept_cookies",
+        "uid" : "92e53d74a2bee496",
+        "parentUid" : "01d231dabc424d7422e8652e0def18e9",
+        "status" : "broken",
+        "time" : {
+          "start" : 1627912032967,
+          "stop" : 1627912032967,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test__registration",
+        "uid" : "5b0a274e6cff0353",
+        "parentUid" : "01d231dabc424d7422e8652e0def18e9",
+        "status" : "broken",
+        "time" : {
+          "start" : 1627912038711,
+          "stop" : 1627912038711,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test__login",
+        "uid" : "99c81ebabc485e8e",
+        "parentUid" : "01d231dabc424d7422e8652e0def18e9",
+        "status" : "broken",
+        "time" : {
+          "start" : 1627912039998,
+          "stop" : 1627912039998,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test__list_data",
+        "uid" : "31e7797a9433d185",
+        "parentUid" : "01d231dabc424d7422e8652e0def18e9",
+        "status" : "broken",
+        "time" : {
+          "start" : 1627912041277,
+          "stop" : 1627912041277,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test__pagination",
+        "uid" : "45f49b4faff3c0e0",
+        "parentUid" : "01d231dabc424d7422e8652e0def18e9",
+        "status" : "broken",
+        "time" : {
+          "start" : 1627912042553,
+          "stop" : 1627912042553,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test__add_new_article",
+        "uid" : "d9c6bcb0c1252c26",
+        "parentUid" : "01d231dabc424d7422e8652e0def18e9",
+        "status" : "broken",
+        "time" : {
+          "start" : 1627912043844,
+          "stop" : 1627912043844,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test__import_data_from_file",
+        "uid" : "7c616825b808f5d6",
+        "parentUid" : "01d231dabc424d7422e8652e0def18e9",
+        "status" : "broken",
+        "time" : {
+          "start" : 1627912045135,
+          "stop" : 1627912045135,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test__delete_article",
+        "uid" : "1e80d886f2772aee",
+        "parentUid" : "01d231dabc424d7422e8652e0def18e9",
+        "status" : "broken",
+        "time" : {
+          "start" : 1627912046429,
+          "stop" : 1627912046429,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test__save_data_to_file",
+        "uid" : "bb2834556a593090",
+        "parentUid" : "01d231dabc424d7422e8652e0def18e9",
+        "status" : "broken",
+        "time" : {
+          "start" : 1627912047717,
+          "stop" : 1627912047717,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test__logout",
+        "uid" : "aa41fb7315fcd9d2",
+        "parentUid" : "01d231dabc424d7422e8652e0def18e9",
+        "status" : "broken",
+        "time" : {
+          "start" : 1627912048995,
+          "stop" : 1627912048995,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "01d231dabc424d7422e8652e0def18e9"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ],
+  "name" : "categories"
+}
