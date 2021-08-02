@@ -7,18 +7,19 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.chrome.options import Options
-from pathlib import Path
+#from webdriver_manager.chrome import ChromeDriverManager
+#from selenium.webdriver.chrome.options import Options
+#from pathlib import Path
 
 # In order for ChromeDriverManager to work you must pip install it in your own environment.
-driver_options = Options()
-driver_options.headless = True
-browser = webdriver.Chrome(ChromeDriverManager().install(), options=driver_options)
+#driver_options = Options()
+#driver_options.headless = True
+#browser = webdriver.Chrome(ChromeDriverManager().install(), options=driver_options)
 
 
 class TestConduit(object):
     def setup(self):
+        self.browser.webdriver.Chrome("/usr/bin/chromedriver")
         self.browser.get("http://localhost:1667/")
         self.browser.maximize_window()
         time.sleep(1)
