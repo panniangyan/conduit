@@ -17,80 +17,80 @@ driver_options.headless = True
 browser = webdriver.Chrome(ChromeDriverManager().install(), options=driver_options)
 
 
-class TestConduit(object):
-    def setup():
-        browser.get("http://localhost:1667/")
-        browser.maximize_window()
-        time.sleep(1)
+def setup():
+    browser.get("http://localhost:1667/")
+    browser.maximize_window()
+    time.sleep(1)
 
-    def teardown():
-        browser.quit()
+def teardown():
+    browser.quit()
 
-    # # Test_3 ACCEPT COOKIES
-    def test__accept_cookies():
-        browser.find_element_by_xpath('//button[contains (.,"I accept!")]').click()
-        time.sleep(2)
-        assert (browser.find_elements_by_xpath('//button') == [])
-        time.sleep(1)
-        print("Test_3: cookies accepted")
+# # Test_3 ACCEPT COOKIES
+def test__accept_cookies():
+    setup()
+    browser.find_element_by_xpath('//button[contains (.,"I accept!")]').click()
+    time.sleep(2)
+    assert (browser.find_elements_by_xpath('//button') == [])
+    time.sleep(1)
+    print("Test_3: cookies accepted")
 
-    # # Test_1 REGISTRATION
-    def test__registration():
-        user_input = {"name": "test",
-                      "email": "user5@hotmail.com",
-                      "password": "Userpass1"
-                      }
-        test__accept_cookies()
+# # Test_1 REGISTRATION
+def test__registration():
+    user_input = {"name": "test",
+                  "email": "user5@hotmail.com",
+                  "password": "Userpass1"
+                 }
+    test__accept_cookies()
 
-        browser.find_element_by_xpath('//*[@href="#/register"]').click()
-        time.sleep(2)
-        browser.find_element_by_xpath('//*[@placeholder="Username"]').send_keys(user_input["name"])
-        browser.find_element_by_xpath('//*[@placeholder="Email"]').send_keys(user_input["email"])
-        browser.find_element_by_xpath('//*[@placeholder="Password"]').send_keys(user_input["password"])
-        time.sleep(1)
-        browser.find_element_by_xpath('//button[1]').click()
-        time.sleep(2)
-        # assert
-        ref_text_fail = "Registration failed!"
-        ref_text_success = "Welcome!"
-        welcome = WebDriverWait(browser, 5).until(
-            EC.visibility_of_element_located((By.CSS_SELECTOR, ".swal-title"))
-        )
-        #assert (welcome.text == ref_text_success)
-        assert (welcome.text == ref_text_fail)
-        print("Test_1 SIGNED UP: ", welcome.text, end=" ")
-        if welcome.text == ref_text_success:
-            print(browser.find_element_by_css_selector(".swal-text").text, sep=" ")
-        elif welcome.text == ref_text_fail:
-            print(browser.find_element_by_css_selector(".swal-text").text, sep=" ")
-        for k, v in user_input.items():
-            print(k, v, sep=": ", end=";")
-        browser.find_element_by_xpath('//*[@class="swal-button swal-button--confirm"]').click()
-        time.sleep(1)
+    browser.find_element_by_xpath('//*[@href="#/register"]').click()
+    time.sleep(2)
+    browser.find_element_by_xpath('//*[@placeholder="Username"]').send_keys(user_input["name"])
+    browser.find_element_by_xpath('//*[@placeholder="Email"]').send_keys(user_input["email"])
+    browser.find_element_by_xpath('//*[@placeholder="Password"]').send_keys(user_input["password"])
+    time.sleep(1)
+    browser.find_element_by_xpath('//button[1]').click()
+    time.sleep(2)
+     # assert
+    ref_text_fail = "Registration failed!"
+    ref_text_success = "Welcome!"
+    welcome = WebDriverWait(browser, 5).until(
+         EC.visibility_of_element_located((By.CSS_SELECTOR, ".swal-title"))
+    )
+    # assert (welcome.text == ref_text_success)
+    assert (welcome.text == ref_text_fail)
+    print("Test_1 SIGNED UP: ", welcome.text, end=" ")
+    if welcome.text == ref_text_success:
+        print(browser.find_element_by_css_selector(".swal-text").text, sep=" ")
+    elif welcome.text == ref_text_fail:
+        print(browser.find_element_by_css_selector(".swal-text").text, sep=" ")
+    for k, v in user_input.items():
+        print(k, v, sep=": ", end=";")
+    browser.find_element_by_xpath('//*[@class="swal-button swal-button--confirm"]').click()
+    time.sleep(1)
 
-    # # Test_2 LOGIN user2
-    def test__login():
-        user_login = {"email": "user2@hotmail.com",
-                      "password": "Userpass1"
-                      }
-        test__accept_cookies()
+# # Test_2 LOGIN user2
+def test__login():
+    user_login = {"email": "user2@hotmail.com",
+                  "password": "Userpass1"
+                  }
+    test__accept_cookies()
 
-        browser.find_element_by_xpath('//*[@href="#/login"]').click()
-        time.sleep(1)
-        browser.find_element_by_xpath('//*[@placeholder="Email"]').send_keys(user_login["email"])
-        browser.find_element_by_xpath('//*[@placeholder="Password"]').send_keys(user_login["password"])
-        time.sleep(1)
-        browser.find_element_by_xpath('//button[1]').click()
-        time.sleep(1)
-        # assert
-        user_name = WebDriverWait(browser, 5).until(
+    browser.find_element_by_xpath('//*[@href="#/login"]').click()
+    time.sleep(1)
+    browser.find_element_by_xpath('//*[@placeholder="Email"]').send_keys(user_login["email"])
+    browser.find_element_by_xpath('//*[@placeholder="Password"]').send_keys(user_login["password"])
+    time.sleep(1)
+    browser.find_element_by_xpath('//button[1]').click()
+    time.sleep(1)
+    # assert
+    user_name = WebDriverWait(browser, 5).until(
             EC.visibility_of_element_located((By.XPATH, '//*[@class="nav-link" and contains(text(),"user2")]'))
         )
-        assert user_name.text == "user2"
-        print(f"Test_2 SIGNED IN: as {user_name.text}")
-        time.sleep(1)
+    assert user_name.text == "user2"
+    print(f"Test_2 SIGNED IN: as {user_name.text}")
+    time.sleep(1)
 
-    # # Test_4 DATA LISTING
+# # Test_4 DATA LISTING
     def test__list_data():
         test__login()
         active_links = browser.find_elements_by_xpath('//*[@href="#/"]')
