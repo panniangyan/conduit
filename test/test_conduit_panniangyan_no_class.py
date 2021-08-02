@@ -17,12 +17,12 @@ driver_options.headless = True
 browser = webdriver.Chrome(ChromeDriverManager().install(), options=driver_options)
 
 
-def setup():
-    browser.get("http://localhost:1667/")
+def test_setup():
+    browser.get("http://localhost:1667")
     browser.maximize_window()
     time.sleep(1)
 
-def teardown():
+def test_teardown():
     browser.quit()
 
 # # Test_3 ACCEPT COOKIES
@@ -91,29 +91,29 @@ def test__login():
     time.sleep(1)
 
 # # Test_4 DATA LISTING
-    def test__list_data():
-        test__login()
-        active_links = browser.find_elements_by_xpath('//*[@href="#/"]')
-        # assert
-        assert(browser.find_element_by_xpath('//*[@href="#/"]') == active_links[0])
-        print("Test_4: DATA LISTING - active links on conduit homepage", browser.current_url)
-        for k in active_links:
-            print(k.text)
-
-    # # Test_5 PAGINATION
-    def test__pagination():
-        test__login()
-        # pagination on global feed
-        print(f"Test_5 PAGINATION:", end=" ")
-        page_list = browser.find_elements_by_class_name("page-link")
-        for page in page_list:
-            page.click()
-            print(page.text, sep=", ", end=" ")
-        # assert
-        last_page = browser.find_element_by_xpath(f'//*[@class="page-item active" and @data-test="page-link-{page.text}"]')
-        assert (page.text == last_page.text)
-        print(f"last page: #{last_page.text}")
-        time.sleep(1)
+def test__list_data():
+    test__login()
+    active_links = browser.find_elements_by_xpath('//*[@href="#/"]')
+    # assert
+    assert(browser.find_element_by_xpath('//*[@href="#/"]') == active_links[0])
+    print("Test_4: DATA LISTING - active links on conduit homepage", browser.current_url)
+    for k in active_links:
+        print(k.text)
+        
+ # # Test_5 PAGINATION
+ def test__pagination():
+     test__login()
+     # pagination on global feed
+     print(f"Test_5 PAGINATION:", end=" ")
+     page_list = browser.find_elements_by_class_name("page-link")
+     for page in page_list:
+        page.click()
+        print(page.text, sep=", ", end=" ")
+     # assert
+     last_page = browser.find_element_by_xpath(f'//*[@class="page-item active" and @data-test="page-link-{page.text}"]')
+     assert (page.text == last_page.text)
+     print(f"last page: #{last_page.text}")
+     time.sleep(1)
 
     # # Test_6 NEW ARTICLE
     def test__add_new_article():
