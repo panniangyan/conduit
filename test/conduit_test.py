@@ -4,11 +4,18 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.chrome.options import Options
+from webdriver_manager.chrome import ChromeDriverManager
+
+
 
 
 class TestConduit(object):
     def setup(self):
-        self.browser = webdriver.Chrome("/usr/bin/chromedriver")
+        browser_options = Options()
+        browser_options.headless = True
+        self.browser = webdriver.Chrome(ChromeDriverManager().install(), options=browser_options)
+     
         self.browser.get("http://localhost:1667")
         self.browser.maximize_window()
         time.sleep(1)
