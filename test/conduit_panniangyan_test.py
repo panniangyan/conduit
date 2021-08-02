@@ -19,7 +19,6 @@ browser = webdriver.Chrome(ChromeDriverManager().install(), options=driver_optio
 
 class TestConduit(object):
     def setup(self):
-        browser.webdriver.Chrome()
         browser.get("http://localhost:1667/")
         browser.maximize_window()
         time.sleep(1)
