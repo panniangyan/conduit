@@ -18,16 +18,16 @@ browser = webdriver.Chrome(ChromeDriverManager().install(), options=driver_optio
 
 
 class TestConduit(object):
-    def setup(self):
+    def setup():
         browser.get("http://localhost:1667/")
         browser.maximize_window()
         time.sleep(1)
 
-    def teardown(self):
+    def teardown():
         browser.quit()
 
     # # Test_3 ACCEPT COOKIES
-    def test__accept_cookies(self):
+    def test__accept_cookies():
         browser.find_element_by_xpath('//button[contains (.,"I accept!")]').click()
         time.sleep(2)
         assert (browser.find_elements_by_xpath('//button') == [])
@@ -35,7 +35,7 @@ class TestConduit(object):
         print("Test_3: cookies accepted")
 
     # # Test_1 REGISTRATION
-    def test__registration(self):
+    def test__registration():
         user_input = {"name": "test",
                       "email": "user5@hotmail.com",
                       "password": "Userpass1"
@@ -69,7 +69,7 @@ class TestConduit(object):
         time.sleep(1)
 
     # # Test_2 LOGIN user2
-    def test__login(self):
+    def test__login():
         user_login = {"email": "user2@hotmail.com",
                       "password": "Userpass1"
                       }
@@ -91,7 +91,7 @@ class TestConduit(object):
         time.sleep(1)
 
     # # Test_4 DATA LISTING
-    def test__list_data(self):
+    def test__list_data():
         test__login()
         active_links = browser.find_elements_by_xpath('//*[@href="#/"]')
         # assert
@@ -101,7 +101,7 @@ class TestConduit(object):
             print(k.text)
 
     # # Test_5 PAGINATION
-    def test__pagination(self):
+    def test__pagination():
         test__login()
         # pagination on global feed
         print(f"Test_5 PAGINATION:", end=" ")
@@ -116,7 +116,7 @@ class TestConduit(object):
         time.sleep(1)
 
     # # Test_6 NEW ARTICLE
-    def test__add_new_article(self):
+    def test__add_new_article():
         input_post = ["test", "me", "blabablabal", "key"]
         article_data = ["Article Title", "What's this article about?", "Write your article (in markdown)", "Enter tags"]
 
@@ -140,7 +140,7 @@ class TestConduit(object):
         time.sleep(1)
 
     # # Test_7 IMPORT DATA FROM FILE
-    def test__import_data_from_file(self):
+    def test__import_data_from_file():
         test__login()
         input_file = 'input_article.csv'
         with open(input_file, 'r') as data:
@@ -163,7 +163,7 @@ class TestConduit(object):
         time.sleep(1)
 
     # # Test_8 MODIFY POST (title)
-    def test__modify_article(self):
+    def test__modify_article():
         test__login()
         title_list = []
         title = "OhLALA"
@@ -201,7 +201,7 @@ class TestConduit(object):
         time.sleep(1)
 
     # # Test_9 DELETE ARTICLE
-    def test__delete_article(self):
+    def test__delete_article():
         test__login()
         WebDriverWait(browser, 5).until(
             EC.visibility_of_element_located((By.XPATH, '//*[@href="#/@user2/"]'))
@@ -223,7 +223,7 @@ class TestConduit(object):
         time.sleep(1)
 
     # # Test_10 SAVE DATA
-    def test__save_data_to_file(self):
+    def test__save_data_to_file():
         test__login()
         user_name = WebDriverWait(browser, 5).until(
             EC.visibility_of_element_located((By.XPATH, '//*[@class="nav-link" and contains(text(),"user2")]'))
@@ -241,7 +241,7 @@ class TestConduit(object):
         print(f"Test_10: WRITE TO FILE {user_name.text}_title.csv, {title}")
 
     # Test_11 LOGOUT (user2)
-    def test__logout(self):
+    def test__logout():
         test__login()
         logout_btn = browser.find_element_by_xpath('//*[@class="nav-link" and contains(text(),"Log out")]')
         assert(logout_btn.text == ' Log out')
