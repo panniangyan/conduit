@@ -12,26 +12,26 @@ from selenium.webdriver.support import expected_conditions as EC
 #from pathlib import Path
 
 # In order for ChromeDriverManager to work you must pip install it in your own environment.
-#driver_options = Options()
-#driver_options.headless = True
-#browser = webdriver.Chrome(ChromeDriverManager().install(), options=driver_options)
+driver_options = Options()
+driver_options.headless = True
+browser = webdriver.Chrome(ChromeDriverManager().install(), options=driver_options)
 
 
 class TestConduit(object):
     def setup(self):
-        self.browser.webdriver.Chrome("/usr/bin/chromedriver")
-        self.browser.get("http://localhost:1667/")
-        self.browser.maximize_window()
+        browser.webdriver.Chrome()
+        browser.get("http://localhost:1667/")
+        browser.maximize_window()
         time.sleep(1)
 
     def teardown(self):
-        self.browser.quit()
+        browser.quit()
 
     # # Test_3 ACCEPT COOKIES
     def test__accept_cookies(self):
-        self.browser.find_element_by_xpath('//button[contains (.,"I accept!")]').click()
+        browser.find_element_by_xpath('//button[contains (.,"I accept!")]').click()
         time.sleep(2)
-        assert (self.browser.find_elements_by_xpath('//button') == [])
+        assert (browser.find_elements_by_xpath('//button') == [])
         time.sleep(1)
         print("Test_3: cookies accepted")
 
@@ -41,32 +41,32 @@ class TestConduit(object):
                       "email": "user5@hotmail.com",
                       "password": "Userpass1"
                       }
-        self.test__accept_cookies()
+        test__accept_cookies()
 
-        self.browser.find_element_by_xpath('//*[@href="#/register"]').click()
+        browser.find_element_by_xpath('//*[@href="#/register"]').click()
         time.sleep(2)
-        self.browser.find_element_by_xpath('//*[@placeholder="Username"]').send_keys(user_input["name"])
-        self.browser.find_element_by_xpath('//*[@placeholder="Email"]').send_keys(user_input["email"])
-        self.browser.find_element_by_xpath('//*[@placeholder="Password"]').send_keys(user_input["password"])
+        browser.find_element_by_xpath('//*[@placeholder="Username"]').send_keys(user_input["name"])
+        browser.find_element_by_xpath('//*[@placeholder="Email"]').send_keys(user_input["email"])
+        browser.find_element_by_xpath('//*[@placeholder="Password"]').send_keys(user_input["password"])
         time.sleep(1)
-        self.browser.find_element_by_xpath('//button[1]').click()
+        browser.find_element_by_xpath('//button[1]').click()
         time.sleep(2)
         # assert
         ref_text_fail = "Registration failed!"
         ref_text_success = "Welcome!"
-        welcome = WebDriverWait(self.browser, 5).until(
+        welcome = WebDriverWait(browser, 5).until(
             EC.visibility_of_element_located((By.CSS_SELECTOR, ".swal-title"))
         )
         #assert (welcome.text == ref_text_success)
         assert (welcome.text == ref_text_fail)
         print("Test_1 SIGNED UP: ", welcome.text, end=" ")
         if welcome.text == ref_text_success:
-            print(self.browser.find_element_by_css_selector(".swal-text").text, sep=" ")
+            print(browser.find_element_by_css_selector(".swal-text").text, sep=" ")
         elif welcome.text == ref_text_fail:
-            print(self.browser.find_element_by_css_selector(".swal-text").text, sep=" ")
+            print(browser.find_element_by_css_selector(".swal-text").text, sep=" ")
         for k, v in user_input.items():
             print(k, v, sep=": ", end=";")
-        self.browser.find_element_by_xpath('//*[@class="swal-button swal-button--confirm"]').click()
+        browser.find_element_by_xpath('//*[@class="swal-button swal-button--confirm"]').click()
         time.sleep(1)
 
     # # Test_2 LOGIN user2
