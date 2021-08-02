@@ -7,9 +7,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-#from webdriver_manager.chrome import ChromeDriverManager
-#from selenium.webdriver.chrome.options import Options
-#from pathlib import Path
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.options import Options
+from pathlib import Path
 
 # In order for ChromeDriverManager to work you must pip install it in your own environment.
 driver_options = Options()
