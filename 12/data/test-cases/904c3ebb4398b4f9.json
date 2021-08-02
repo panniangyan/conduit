@@ -1,0 +1,163 @@
+{
+  "uid" : "904c3ebb4398b4f9",
+  "name" : "test__pagination",
+  "fullName" : "test.conduit_panniangyan_test.TestConduit#test__pagination",
+  "historyId" : "e9939597f3edc0b6a86b00b225f9c777",
+  "time" : {
+    "start" : 1627888455639,
+    "stop" : 1627888455639,
+    "duration" : 0
+  },
+  "status" : "broken",
+  "statusMessage" : "AttributeError: 'TestConduit' object has no attribute 'browser'",
+  "statusTrace" : "self = <conduit_panniangyan_test.TestConduit object at 0x7fa3dcf57160>\n\n    def setup(self):\n>       self.browser.webdriver.Chrome(\"/usr/bin/chromedriver\")\nE       AttributeError: 'TestConduit' object has no attribute 'browser'\n\ntest/conduit_panniangyan_test.py:22: AttributeError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "test"
+  }, {
+    "name" : "suite",
+    "value" : "conduit_panniangyan_test"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestConduit"
+  }, {
+    "name" : "host",
+    "value" : "fv-az74-587"
+  }, {
+    "name" : "thread",
+    "value" : "3644-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test.conduit_panniangyan_test"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 10,
+        "skipped" : 0,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 10
+      },
+      "items" : [ {
+        "uid" : "bdd53348ee8f6a69",
+        "reportUrl" : "https://panniangyan.github.io/conduit/11//#testresult/bdd53348ee8f6a69",
+        "status" : "broken",
+        "statusDetails" : "AttributeError: 'TestConduit' object has no attribute 'browser'",
+        "time" : {
+          "start" : 1627829932568,
+          "stop" : 1627829932568,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "183347a3f2c75f06",
+        "reportUrl" : "https://panniangyan.github.io/conduit/10//#testresult/183347a3f2c75f06",
+        "status" : "broken",
+        "statusDetails" : "AttributeError: 'TestConduit' object has no attribute 'browser'",
+        "time" : {
+          "start" : 1627829830048,
+          "stop" : 1627829830048,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "cfb4b78b7ec6238",
+        "reportUrl" : "https://panniangyan.github.io/conduit/9//#testresult/cfb4b78b7ec6238",
+        "status" : "broken",
+        "statusDetails" : "AttributeError: 'TestConduit' object has no attribute 'browser'",
+        "time" : {
+          "start" : 1627829049992,
+          "stop" : 1627829049992,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "c7eb53501efbd8ac",
+        "reportUrl" : "https://panniangyan.github.io/conduit/8//#testresult/c7eb53501efbd8ac",
+        "status" : "broken",
+        "statusDetails" : "AttributeError: 'TestConduit' object has no attribute 'browser'",
+        "time" : {
+          "start" : 1627828717738,
+          "stop" : 1627828717738,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "fb8374e619526827",
+        "reportUrl" : "https://panniangyan.github.io/conduit/7//#testresult/fb8374e619526827",
+        "status" : "broken",
+        "statusDetails" : "selenium.common.exceptions.WebDriverException: Message: unknown error: Chrome failed to start: exited abnormally.\n  (unknown error: DevToolsActivePort file doesn't exist)\n  (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)",
+        "time" : {
+          "start" : 1627828256019,
+          "stop" : 1627828256019,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "a84747d23ddef301",
+        "reportUrl" : "https://panniangyan.github.io/conduit/6//#testresult/a84747d23ddef301",
+        "status" : "broken",
+        "statusDetails" : "selenium.common.exceptions.WebDriverException: Message: unknown error: Chrome failed to start: exited abnormally.\n  (unknown error: DevToolsActivePort file doesn't exist)\n  (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)",
+        "time" : {
+          "start" : 1627827069247,
+          "stop" : 1627827069247,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "7ef9045816af3eee",
+        "reportUrl" : "https://panniangyan.github.io/conduit/5//#testresult/7ef9045816af3eee",
+        "status" : "broken",
+        "statusDetails" : "selenium.common.exceptions.WebDriverException: Message: unknown error: Chrome failed to start: exited abnormally.\n  (unknown error: DevToolsActivePort file doesn't exist)\n  (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)",
+        "time" : {
+          "start" : 1627819956235,
+          "stop" : 1627819956235,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "eaae4f1126163bd0",
+        "reportUrl" : "https://panniangyan.github.io/conduit/4//#testresult/eaae4f1126163bd0",
+        "status" : "broken",
+        "statusDetails" : "selenium.common.exceptions.WebDriverException: Message: unknown error: Chrome failed to start: exited abnormally.\n  (unknown error: DevToolsActivePort file doesn't exist)\n  (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)",
+        "time" : {
+          "start" : 1627818411546,
+          "stop" : 1627818411546,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "bd66a7b594bc7cb2",
+        "reportUrl" : "https://panniangyan.github.io/conduit/3//#testresult/bd66a7b594bc7cb2",
+        "status" : "broken",
+        "statusDetails" : "selenium.common.exceptions.WebDriverException: Message: unknown error: Chrome failed to start: exited abnormally.\n  (unknown error: DevToolsActivePort file doesn't exist)\n  (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)",
+        "time" : {
+          "start" : 1627818161155,
+          "stop" : 1627818161155,
+          "duration" : 0
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "904c3ebb4398b4f9.json",
+  "parameterValues" : [ ]
+}
