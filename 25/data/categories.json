@@ -1,0 +1,143 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "selenium.common.exceptions.WebDriverException: Message: unknown error: Chrome failed to start: exited abnormally.\n  (unknown error: DevToolsActivePort file doesn't exist)\n  (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)",
+      "children" : [ {
+        "name" : "test__accept_cookies",
+        "uid" : "20c3e5105db1495a",
+        "parentUid" : "e4a7d37349393b5a9e33d7e741170037",
+        "status" : "broken",
+        "time" : {
+          "start" : 1627911379588,
+          "stop" : 1627911379588,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test__registration",
+        "uid" : "6cee1533bded1fba",
+        "parentUid" : "e4a7d37349393b5a9e33d7e741170037",
+        "status" : "broken",
+        "time" : {
+          "start" : 1627911381297,
+          "stop" : 1627911381297,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test__login",
+        "uid" : "c7c4dc335a62daae",
+        "parentUid" : "e4a7d37349393b5a9e33d7e741170037",
+        "status" : "broken",
+        "time" : {
+          "start" : 1627911382460,
+          "stop" : 1627911382460,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test__list_data",
+        "uid" : "79bf00c424c9ebc1",
+        "parentUid" : "e4a7d37349393b5a9e33d7e741170037",
+        "status" : "broken",
+        "time" : {
+          "start" : 1627911383625,
+          "stop" : 1627911383625,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test__pagination",
+        "uid" : "eb1cc97fefef3b26",
+        "parentUid" : "e4a7d37349393b5a9e33d7e741170037",
+        "status" : "broken",
+        "time" : {
+          "start" : 1627911384789,
+          "stop" : 1627911384789,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test__add_new_article",
+        "uid" : "f4a48ab08c8339f0",
+        "parentUid" : "e4a7d37349393b5a9e33d7e741170037",
+        "status" : "broken",
+        "time" : {
+          "start" : 1627911385955,
+          "stop" : 1627911385955,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test__import_data_from_file",
+        "uid" : "a3c7f4737b05832b",
+        "parentUid" : "e4a7d37349393b5a9e33d7e741170037",
+        "status" : "broken",
+        "time" : {
+          "start" : 1627911387122,
+          "stop" : 1627911387122,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test__delete_article",
+        "uid" : "53297e389b6c15e1",
+        "parentUid" : "e4a7d37349393b5a9e33d7e741170037",
+        "status" : "broken",
+        "time" : {
+          "start" : 1627911388308,
+          "stop" : 1627911388308,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test__save_data_to_file",
+        "uid" : "9a7c9a06edd5691b",
+        "parentUid" : "e4a7d37349393b5a9e33d7e741170037",
+        "status" : "broken",
+        "time" : {
+          "start" : 1627911389472,
+          "stop" : 1627911389472,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test__logout",
+        "uid" : "54b3b901000b64e4",
+        "parentUid" : "e4a7d37349393b5a9e33d7e741170037",
+        "status" : "broken",
+        "time" : {
+          "start" : 1627911390638,
+          "stop" : 1627911390638,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "e4a7d37349393b5a9e33d7e741170037"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ],
+  "name" : "categories"
+}

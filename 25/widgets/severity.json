@@ -1,0 +1,101 @@
+[ {
+  "uid" : "53297e389b6c15e1",
+  "name" : "test__delete_article",
+  "time" : {
+    "start" : 1627911388308,
+    "stop" : 1627911388308,
+    "duration" : 0
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "eb1cc97fefef3b26",
+  "name" : "test__pagination",
+  "time" : {
+    "start" : 1627911384789,
+    "stop" : 1627911384789,
+    "duration" : 0
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "79bf00c424c9ebc1",
+  "name" : "test__list_data",
+  "time" : {
+    "start" : 1627911383625,
+    "stop" : 1627911383625,
+    "duration" : 0
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "9a7c9a06edd5691b",
+  "name" : "test__save_data_to_file",
+  "time" : {
+    "start" : 1627911389472,
+    "stop" : 1627911389472,
+    "duration" : 0
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "6cee1533bded1fba",
+  "name" : "test__registration",
+  "time" : {
+    "start" : 1627911381297,
+    "stop" : 1627911381297,
+    "duration" : 0
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "c7c4dc335a62daae",
+  "name" : "test__login",
+  "time" : {
+    "start" : 1627911382460,
+    "stop" : 1627911382460,
+    "duration" : 0
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "f4a48ab08c8339f0",
+  "name" : "test__add_new_article",
+  "time" : {
+    "start" : 1627911385955,
+    "stop" : 1627911385955,
+    "duration" : 0
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "a3c7f4737b05832b",
+  "name" : "test__import_data_from_file",
+  "time" : {
+    "start" : 1627911387122,
+    "stop" : 1627911387122,
+    "duration" : 0
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "54b3b901000b64e4",
+  "name" : "test__logout",
+  "time" : {
+    "start" : 1627911390638,
+    "stop" : 1627911390638,
+    "duration" : 0
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "20c3e5105db1495a",
+  "name" : "test__accept_cookies",
+  "time" : {
+    "start" : 1627911379588,
+    "stop" : 1627911379588,
+    "duration" : 0
+  },
+  "status" : "broken",
+  "severity" : "normal"
+} ]
