@@ -1,0 +1,4 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"broken","Mon Aug 02 10:29:34 GMT 2021","Mon Aug 02 10:29:34 GMT 2021","0","test","test_conduit_panniangyan_no_class","","","","test__login",""
+"broken","Mon Aug 02 10:29:34 GMT 2021","Mon Aug 02 10:29:34 GMT 2021","0","test","test_conduit_panniangyan_no_class","","","","test__registration",""
+"passed","Mon Aug 02 10:29:29 GMT 2021","Mon Aug 02 10:29:34 GMT 2021","4270","test","test_conduit_panniangyan_no_class","","","","test__accept_cookies",""
