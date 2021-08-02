@@ -2,4 +2,4 @@ pytest
 allure-pytest==2.8.40
 webdriver-manager==3.4.2
 selenium==3.141.0
-pytest==6.2.4
+urllib3==1.26.5
