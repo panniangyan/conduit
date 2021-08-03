@@ -1,0 +1,86 @@
+{
+  "uid" : "fed6d349483c3df4",
+  "name" : "test__save_data_to_file",
+  "fullName" : "test.test_conduit.TestConduit#test__save_data_to_file",
+  "historyId" : "377fca6d24cd2889d8e889372cd401fc",
+  "time" : {
+    "start" : 1628020904666,
+    "stop" : 1628020914168,
+    "duration" : 9502
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError: assert ['user2Lorem ...lor sit amet'] == ['user2', 'Lo...lor sit amet']\n  At index 0 diff: 'user2Lorem ipsum dolor sit amet' != 'user2'\n  Right contains one more item: 'Lorem ipsum dolor sit amet'\n  Use -v to get the full diff",
+  "statusTrace" : "self = <test_conduit.TestConduit object at 0x7f3ad2a69e50>\n\n        def test__save_data_to_file(self):\n            conduit_login(self.browser)\n            accept_cookies(self.browser)\n            write_to_file = []\n            user_name = WebDriverWait(self.browser, 5).until(\n                EC.visibility_of_element_located((By.XPATH, '//*[@class=\"nav-link\" and contains(text(),\"user2\")]'))\n            )\n            write_to_file.append(user_name.text)\n            user_name.click()\n    #        out_file = \"{user_name.text}_title.csv\"\n            time.sleep(2)\n            title = xpath(self.browser, '//*[@class=\"article-preview\"]/a/h1').text\n            write_to_file.append(title)\n            with open(f'{user_name.text}_title.csv', 'w') as out:\n                for line in write_to_file:\n                    out.write(line)\n            time.sleep(2)\n            # assert\n            read_file = []\n            with open(f'{user_name.text}_title.csv', 'r') as file:\n                for line in file:\n                    read_file.append(line)\n>           assert(read_file == write_to_file)\nE           AssertionError: assert ['user2Lorem ...lor sit amet'] == ['user2', 'Lo...lor sit amet']\nE             At index 0 diff: 'user2Lorem ipsum dolor sit amet' != 'user2'\nE             Right contains one more item: 'Lorem ipsum dolor sit amet'\nE             Use -v to get the full diff\n\ntest/test_conduit.py:285: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "AssertionError: assert ['user2Lorem ...lor sit amet'] == ['user2', 'Lo...lor sit amet']\n  At index 0 diff: 'user2Lorem ipsum dolor sit amet' != 'user2'\n  Right contains one more item: 'Lorem ipsum dolor sit amet'\n  Use -v to get the full diff",
+    "statusTrace" : "self = <test_conduit.TestConduit object at 0x7f3ad2a69e50>\n\n        def test__save_data_to_file(self):\n            conduit_login(self.browser)\n            accept_cookies(self.browser)\n            write_to_file = []\n            user_name = WebDriverWait(self.browser, 5).until(\n                EC.visibility_of_element_located((By.XPATH, '//*[@class=\"nav-link\" and contains(text(),\"user2\")]'))\n            )\n            write_to_file.append(user_name.text)\n            user_name.click()\n    #        out_file = \"{user_name.text}_title.csv\"\n            time.sleep(2)\n            title = xpath(self.browser, '//*[@class=\"article-preview\"]/a/h1').text\n            write_to_file.append(title)\n            with open(f'{user_name.text}_title.csv', 'w') as out:\n                for line in write_to_file:\n                    out.write(line)\n            time.sleep(2)\n            # assert\n            read_file = []\n            with open(f'{user_name.text}_title.csv', 'r') as file:\n                for line in file:\n                    read_file.append(line)\n>           assert(read_file == write_to_file)\nE           AssertionError: assert ['user2Lorem ...lor sit amet'] == ['user2', 'Lo...lor sit amet']\nE             At index 0 diff: 'user2Lorem ipsum dolor sit amet' != 'user2'\nE             Right contains one more item: 'Lorem ipsum dolor sit amet'\nE             Use -v to get the full diff\n\ntest/test_conduit.py:285: AssertionError",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "57c9f878cb1d756b",
+      "name" : "log",
+      "source" : "57c9f878cb1d756b.txt",
+      "type" : "text/plain",
+      "size" : 344
+    }, {
+      "uid" : "5c3501396b4ccdf4",
+      "name" : "stderr",
+      "source" : "5c3501396b4ccdf4.txt",
+      "type" : "text/plain",
+      "size" : 215
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 2,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "test"
+  }, {
+    "name" : "suite",
+    "value" : "test_conduit"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestConduit"
+  }, {
+    "name" : "host",
+    "value" : "fv-az81-904"
+  }, {
+    "name" : "thread",
+    "value" : "3621-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test.test_conduit"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "fed6d349483c3df4.json",
+  "parameterValues" : [ ]
+}
