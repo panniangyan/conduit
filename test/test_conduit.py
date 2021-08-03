@@ -1,15 +1,16 @@
 import pytest
 import time
-# preparing selenium and chrome web driver manager
+from csv import reader
+
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
-# importing web driver waiting components
+
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-# importing os for running docker-compose up -d
+
 import os
 
 
@@ -274,16 +275,15 @@ class TestConduit(object):
         title = xpath(self.browser, '//*[@class="article-preview"]/a/h1').text
         write_to_file.append(title)
         with open(f'{user_name.text}_title.csv', 'w') as out:
-            for line in write_to_file:
-                out.write(line)
+            line = "\n".join(write_to_file)
+            out.write(line)
         time.sleep(2)
         # assert
-        read_file = []
         with open(f'{user_name.text}_title.csv', 'r') as file:
-            for line in file:
-                read_file.append(line)
-        assert(read_file == write_to_file)
-        print(f"Test_10: WRITE TO FILE {user_name.text}_title.csv, {user_name}, {title}")
+            list_line = file.read().split("\n")
+#            print(list_line)
+        assert (list_line == write_to_file)
+        print(f"Test_10: WRITE TO FILE {user_name.text}_title.csv, {user_name.text}, {title}")
 
     # Test_11 LOGOUT (user2)
     def test__logout(self):
