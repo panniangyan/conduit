@@ -1,0 +1,111 @@
+[ {
+  "uid" : "6fb661a1594df8f0",
+  "name" : "test__accept_cookies",
+  "time" : {
+    "start" : 1628030533645,
+    "stop" : 1628030536762,
+    "duration" : 3117
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "5772185e298cbe55",
+  "name" : "test__list_data",
+  "time" : {
+    "start" : 1628030566070,
+    "stop" : 1628030571502,
+    "duration" : 5432
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "57f83d3dbdc7d233",
+  "name" : "test__registration",
+  "time" : {
+    "start" : 1628030539497,
+    "stop" : 1628030549123,
+    "duration" : 9626
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "c6ec0ffd7aa6b91a",
+  "name" : "test__logout",
+  "time" : {
+    "start" : 1628030676146,
+    "stop" : 1628030685623,
+    "duration" : 9477
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "9b405636229f7033",
+  "name" : "test__pagination",
+  "time" : {
+    "start" : 1628030574255,
+    "stop" : 1628030580810,
+    "duration" : 6555
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "2da45e5d3476c7fd",
+  "name" : "test__login",
+  "time" : {
+    "start" : 1628030551900,
+    "stop" : 1628030563299,
+    "duration" : 11399
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "96cbbbc5912d86ea",
+  "name" : "test__import_data_from_file",
+  "time" : {
+    "start" : 1628030597155,
+    "stop" : 1628030610042,
+    "duration" : 12887
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "c1a0f794b0b70ff6",
+  "name" : "test__save_data_to_file",
+  "time" : {
+    "start" : 1628030663926,
+    "stop" : 1628030673427,
+    "duration" : 9501
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "931306af0c546a0f",
+  "name" : "test__delete_article",
+  "time" : {
+    "start" : 1628030641392,
+    "stop" : 1628030661187,
+    "duration" : 19795
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "81abbdbe46e1c1cc",
+  "name" : "test__add_new_article",
+  "time" : {
+    "start" : 1628030583573,
+    "stop" : 1628030594401,
+    "duration" : 10828
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "cd38ef0ccee46f1c",
+  "name" : "test__modify_article",
+  "time" : {
+    "start" : 1628030612780,
+    "stop" : 1628030638621,
+    "duration" : 25841
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]
