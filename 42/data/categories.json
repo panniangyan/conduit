@@ -1,0 +1,26 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "AssertionError: assert 'http://local...olor-sit-amet' == 'http://localhost:1667/#/'\n  - http://localhost:1667/#/\n  + http://localhost:1667/#/articles/lorem-ipsum-dolor-sit-amet",
+      "children" : [ {
+        "name" : "test__delete_article",
+        "uid" : "b31f738aa9e9e7d3",
+        "parentUid" : "05ba4d1726cec21ecfe7c44336b98db4",
+        "status" : "failed",
+        "time" : {
+          "start" : 1628030443115,
+          "stop" : 1628030461919,
+          "duration" : 18804
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "05ba4d1726cec21ecfe7c44336b98db4"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ],
+  "name" : "categories"
+}
