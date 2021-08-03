@@ -1,4 +1,4 @@
-name: Python application
+name: Pytest_conduit
 
 on:
   push:
@@ -7,40 +7,54 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
-
+  Testing-Conduit:
     runs-on: ubuntu-latest
-
+    
     steps:
-      - uses: actions/checkout@v2
-      - run: docker-compose up -dK
-      - name: Sleep for 60 seconds
-        run: sleep 60s
-        shell: bash
+      - name: Initialising check out
+        uses: actions/checkout@v2
+        
       - name: Set up Python 3.9
         uses: actions/setup-python@v2
         with:
           python-version: 3.9
-      - name: Install Chrome
-        run: |
-            sudo apt install google-chrome-stable
+          
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install flake8 pytest
-          if [ -f test/requirements.txt ]; then pip install -r test/requirements.txt; fi
+          if [ -f python-tests/requirements.txt ]; then pip install -r python-tests/requirements.txt; fi
+          
+      - name: Install Chrome
+        run: |
+          sudo apt install google-chrome-stable
+          
+      - name: Starting Docker
+        run: docker-compose up -d
+      
+      - name: Sleep for 84 seconds to start Docker
+        run: sleep 84s
+        shell: bash
+        
       - name: Test with pytest
         run: |
           pytest --alluredir=allure-results
-
-      - name: Allure Report action from marketplace
+          
+      - name: Get Allure History
+        uses: actions/checkout@v2
+        if: always()
+        continue-on-error: true
+        with:
+          ref: gh-pages
+          path: gh-pages
+          
+      - name: Allure Report action from Conduit
         uses: simple-elf/allure-report-action@master
         if: always()
         with:
           allure_results: allure-results
           allure_history: allure-history
           keep_reports: 20
-
+          
       - name: Deploy report to Github Pages
         if: always()
         uses: peaceiris/actions-gh-pages@v2
