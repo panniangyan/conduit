@@ -1,0 +1,101 @@
+[ {
+  "uid" : "bcda0ad5a47ddd88",
+  "name" : "test__import_data_from_file",
+  "time" : {
+    "start" : 1628012576076,
+    "stop" : 1628012576076,
+    "duration" : 0
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "539d1e254e99bf9a",
+  "name" : "test__list_data",
+  "time" : {
+    "start" : 1628012572252,
+    "stop" : 1628012572252,
+    "duration" : 0
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "2f3faf222565296",
+  "name" : "test__save_data_to_file",
+  "time" : {
+    "start" : 1628012578641,
+    "stop" : 1628012578641,
+    "duration" : 0
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "36c12f586c7ae0a3",
+  "name" : "test__delete_article",
+  "time" : {
+    "start" : 1628012577353,
+    "stop" : 1628012577353,
+    "duration" : 0
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "7006b3894a01d7be",
+  "name" : "test__logout",
+  "time" : {
+    "start" : 1628012579915,
+    "stop" : 1628012579915,
+    "duration" : 0
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "38e5fee5870540e1",
+  "name" : "test__pagination",
+  "time" : {
+    "start" : 1628012573522,
+    "stop" : 1628012573522,
+    "duration" : 0
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "18001ebfda3f2f87",
+  "name" : "test__accept_cookies",
+  "time" : {
+    "start" : 1628012561817,
+    "stop" : 1628012561817,
+    "duration" : 0
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "30f2f2b205db74f3",
+  "name" : "test__login",
+  "time" : {
+    "start" : 1628012570986,
+    "stop" : 1628012570986,
+    "duration" : 0
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "3fec402ebd0801dd",
+  "name" : "test__add_new_article",
+  "time" : {
+    "start" : 1628012574799,
+    "stop" : 1628012574799,
+    "duration" : 0
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "9044fa0ad9a918fa",
+  "name" : "test__registration",
+  "time" : {
+    "start" : 1628012569722,
+    "stop" : 1628012569722,
+    "duration" : 0
+  },
+  "status" : "broken",
+  "severity" : "normal"
+} ]
