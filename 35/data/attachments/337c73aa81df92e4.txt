@@ -1,2 +1,0 @@
-Test_1 SIGNED UP:  Registration failed! Email already taken.
-Username: test;Email: user5@hotmail.com;Password: Userpass1;
