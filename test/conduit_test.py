@@ -22,14 +22,14 @@ from selenium.webdriver.support import expected_conditions as EC
 # importing os for running docker-compose up -d
 import os
 
+URL = 'http://localhost:1667'
 
 class TestConduit(object):
     def setup(self):
         browser_options = Options()
         browser_options.headless = True
         self.browser = webdriver.Chrome(ChromeDriverManager().install(), options=browser_options)
-     
-        self.browser.get("http://localhost:1667")
+        self.browser.get(URL)
         self.browser.maximize_window()
         time.sleep(1)
 
