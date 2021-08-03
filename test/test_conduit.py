@@ -1,10 +1,3 @@
-import time
-from csv import reader
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-
 import pytest
 import time
 # preparing selenium and chrome web driver manager
@@ -97,8 +90,8 @@ class TestConduit(object):
         welcome = WebDriverWait(self.browser, 5).until(
             EC.visibility_of_element_located((By.CSS_SELECTOR, ".swal-title"))
         )
-        #assert (welcome.text == ref_text_success)
-        assert (welcome.text == ref_text_fail)
+        assert (welcome.text == ref_text_success)
+        #assert (welcome.text == ref_text_fail)
         print("Test_1 SIGNED UP: ", welcome.text, end=" ")
         if welcome.text == ref_text_success:
             print(self.browser.find_element_by_css_selector(".swal-text").text, sep=" ")
@@ -117,11 +110,12 @@ class TestConduit(object):
         accept_cookies(self.browser)
         conduit_login(self.browser)
 
-        time.sleep(1)
+        time.sleep(5)
         # assert
-        user_name = WebDriverWait(self.browser, 5).until(
-            EC.visibility_of_element_located((By.XPATH, '//*[@class="nav-link" and contains(text(),"user2")]'))
-        )
+        #user_name = WebDriverWait(self.browser, 5).until(
+        #    EC.visibility_of_element_located((By.XPATH, '//*[@class="nav-link" and contains(text(),"user2")]'))
+        #)
+        user_name = xpath(self.browser, '//*[@class="nav-link" and contains(text(),"user2")]'))
         assert user_name.text == "user2"
         print(f"Test_2 SIGNED IN: as {user_name.text}")
         time.sleep(1)
