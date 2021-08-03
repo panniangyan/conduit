@@ -115,7 +115,7 @@ class TestConduit(object):
         #user_name = WebDriverWait(self.browser, 5).until(
         #    EC.visibility_of_element_located((By.XPATH, '//*[@class="nav-link" and contains(text(),"user2")]'))
         #)
-        user_name = xpath(self.browser, '//*[@class="nav-link" and contains(text(),"user2")]'))
+        user_name = xpath(self.browser, '//*[@class="nav-link" and contains(text(),"user2")]')
         assert user_name.text == "user2"
         print(f"Test_2 SIGNED IN: as {user_name.text}")
         time.sleep(1)
