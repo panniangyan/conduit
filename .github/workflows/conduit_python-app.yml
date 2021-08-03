@@ -13,8 +13,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - run: docker-compose up -dK
-      - name: Sleep for 60 seconds
+      - run: docker-compose up -d
+      - name: Sleep for 100 seconds
         run: sleep 60s
         shell: bash
       - name: Set up Python 3.9
