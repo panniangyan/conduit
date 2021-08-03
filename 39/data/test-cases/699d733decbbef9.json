@@ -1,0 +1,92 @@
+{
+  "uid" : "699d733decbbef9",
+  "name" : "test__add_new_article",
+  "fullName" : "test.conduit_test.TestConduit#test__add_new_article",
+  "historyId" : "8d2e9c05e1019f8f893dfc84c3b2ff14",
+  "time" : {
+    "start" : 1628027106587,
+    "stop" : 1628027118068,
+    "duration" : 11481
+  },
+  "status" : "broken",
+  "statusMessage" : "selenium.common.exceptions.TimeoutException: Message:",
+  "statusTrace" : "self = <conduit_test.TestConduit object at 0x7f192d8194c0>\n\n    def test__add_new_article(self):\n        input_post = [\"test\", \"me\", \"blabablabal\", \"key\"]\n        article_data = [\"Article Title\", \"What's this article about?\", \"Write your article (in markdown)\", \"Enter tags\"]\n    \n>       self.test__login()\n\ntest/conduit_test.py:133: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \ntest/conduit_test.py:96: in test__login\n    user_name = WebDriverWait(self.browser, 5).until(\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <selenium.webdriver.support.wait.WebDriverWait (session=\"e460318ac1f10ee20619c8b4759716da\")>\nmethod = <selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f192d7d6dc0>\nmessage = ''\n\n    def until(self, method, message=''):\n        \"\"\"Calls the method provided with the driver as an argument until the \\\n        return value is not False.\"\"\"\n        screen = None\n        stacktrace = None\n    \n        end_time = time.time() + self._timeout\n        while True:\n            try:\n                value = method(self._driver)\n                if value:\n                    return value\n            except self._ignored_exceptions as exc:\n                screen = getattr(exc, 'screen', None)\n                stacktrace = getattr(exc, 'stacktrace', None)\n            time.sleep(self._poll)\n            if time.time() > end_time:\n                break\n>       raise TimeoutException(message, screen, stacktrace)\nE       selenium.common.exceptions.TimeoutException: Message:\n\n/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/selenium/webdriver/support/wait.py:80: TimeoutException",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "broken",
+    "statusMessage" : "selenium.common.exceptions.TimeoutException: Message:",
+    "statusTrace" : "self = <conduit_test.TestConduit object at 0x7f192d8194c0>\n\n    def test__add_new_article(self):\n        input_post = [\"test\", \"me\", \"blabablabal\", \"key\"]\n        article_data = [\"Article Title\", \"What's this article about?\", \"Write your article (in markdown)\", \"Enter tags\"]\n    \n>       self.test__login()\n\ntest/conduit_test.py:133: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \ntest/conduit_test.py:96: in test__login\n    user_name = WebDriverWait(self.browser, 5).until(\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <selenium.webdriver.support.wait.WebDriverWait (session=\"e460318ac1f10ee20619c8b4759716da\")>\nmethod = <selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f192d7d6dc0>\nmessage = ''\n\n    def until(self, method, message=''):\n        \"\"\"Calls the method provided with the driver as an argument until the \\\n        return value is not False.\"\"\"\n        screen = None\n        stacktrace = None\n    \n        end_time = time.time() + self._timeout\n        while True:\n            try:\n                value = method(self._driver)\n                if value:\n                    return value\n            except self._ignored_exceptions as exc:\n                screen = getattr(exc, 'screen', None)\n                stacktrace = getattr(exc, 'stacktrace', None)\n            time.sleep(self._poll)\n            if time.time() > end_time:\n                break\n>       raise TimeoutException(message, screen, stacktrace)\nE       selenium.common.exceptions.TimeoutException: Message:\n\n/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/selenium/webdriver/support/wait.py:80: TimeoutException",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "aecb984cee6e6221",
+      "name" : "log",
+      "source" : "aecb984cee6e6221.txt",
+      "type" : "text/plain",
+      "size" : 344
+    }, {
+      "uid" : "966757181eff6af7",
+      "name" : "stdout",
+      "source" : "966757181eff6af7.txt",
+      "type" : "text/plain",
+      "size" : 25
+    }, {
+      "uid" : "641c8bb8cb329ac8",
+      "name" : "stderr",
+      "source" : "641c8bb8cb329ac8.txt",
+      "type" : "text/plain",
+      "size" : 215
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 3,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "test"
+  }, {
+    "name" : "suite",
+    "value" : "conduit_test"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestConduit"
+  }, {
+    "name" : "host",
+    "value" : "fv-az28-549"
+  }, {
+    "name" : "thread",
+    "value" : "3790-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test.conduit_test"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "699d733decbbef9.json",
+  "parameterValues" : [ ]
+}
