@@ -1,0 +1,111 @@
+[ {
+  "uid" : "53946cdc6c77404a",
+  "name" : "test__registration",
+  "time" : {
+    "start" : 1628034208046,
+    "stop" : 1628034217655,
+    "duration" : 9609
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "d273999502710e01",
+  "name" : "test__pagination",
+  "time" : {
+    "start" : 1628034241887,
+    "stop" : 1628034248477,
+    "duration" : 6590
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "2fd2dd15ff255e0b",
+  "name" : "test__login",
+  "time" : {
+    "start" : 1628034220429,
+    "stop" : 1628034231861,
+    "duration" : 11432
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "4a3fa40517fd2932",
+  "name" : "test__accept_cookies",
+  "time" : {
+    "start" : 1628034202148,
+    "stop" : 1628034205277,
+    "duration" : 3129
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "898fea686b6fd7ba",
+  "name" : "test__modify_article",
+  "time" : {
+    "start" : 1628034291695,
+    "stop" : 1628034315567,
+    "duration" : 23872
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "d07c18b3a61953e",
+  "name" : "test__logout",
+  "time" : {
+    "start" : 1628034352427,
+    "stop" : 1628034361948,
+    "duration" : 9521
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "4af0ac80e94c1506",
+  "name" : "test__add_new_article",
+  "time" : {
+    "start" : 1628034250247,
+    "stop" : 1628034261121,
+    "duration" : 10874
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "92866897b0582d01",
+  "name" : "test__list_data",
+  "time" : {
+    "start" : 1628034234642,
+    "stop" : 1628034240117,
+    "duration" : 5475
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "e8ca28b2ca0d3f27",
+  "name" : "test__import_data_from_file",
+  "time" : {
+    "start" : 1628034264001,
+    "stop" : 1628034289939,
+    "duration" : 25938
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "1ccf140b46b69b4d",
+  "name" : "test__delete_article",
+  "time" : {
+    "start" : 1628034317405,
+    "stop" : 1628034337284,
+    "duration" : 19879
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "71476082689a26ce",
+  "name" : "test__save_data_to_file",
+  "time" : {
+    "start" : 1628034340058,
+    "stop" : 1628034349607,
+    "duration" : 9549
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]
