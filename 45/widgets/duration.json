@@ -1,0 +1,111 @@
+[ {
+  "uid" : "a70c60ff64a90e9f",
+  "name" : "test__registration",
+  "time" : {
+    "start" : 1628030424104,
+    "stop" : 1628030433129,
+    "duration" : 9025
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "bc12b8ae012d56ec",
+  "name" : "test__add_new_article",
+  "time" : {
+    "start" : 1628030467388,
+    "stop" : 1628030478223,
+    "duration" : 10835
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "294867e55f7e66f2",
+  "name" : "test__import_data_from_file",
+  "time" : {
+    "start" : 1628030480914,
+    "stop" : 1628030493755,
+    "duration" : 12841
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "355a7d288e46edbd",
+  "name" : "test__delete_article",
+  "time" : {
+    "start" : 1628030522127,
+    "stop" : 1628030541001,
+    "duration" : 18874
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "1fc0ad449eb65225",
+  "name" : "test__list_data",
+  "time" : {
+    "start" : 1628030449970,
+    "stop" : 1628030455406,
+    "duration" : 5436
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "975e7349de86b287",
+  "name" : "test__pagination",
+  "time" : {
+    "start" : 1628030458117,
+    "stop" : 1628030464660,
+    "duration" : 6543
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "fa72a90b57929913",
+  "name" : "test__logout",
+  "time" : {
+    "start" : 1628030555041,
+    "stop" : 1628030564540,
+    "duration" : 9499
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "cfa010d2040afddc",
+  "name" : "test__login",
+  "time" : {
+    "start" : 1628030435831,
+    "stop" : 1628030447236,
+    "duration" : 11405
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "5c3855f5c51e1ddc",
+  "name" : "test__save_data_to_file",
+  "time" : {
+    "start" : 1628030543765,
+    "stop" : 1628030553288,
+    "duration" : 9523
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "1646ecc321d1caff",
+  "name" : "test__modify_article",
+  "time" : {
+    "start" : 1628030496465,
+    "stop" : 1628030520356,
+    "duration" : 23891
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "c1f53e20f78b25cd",
+  "name" : "test__accept_cookies",
+  "time" : {
+    "start" : 1628030418317,
+    "stop" : 1628030421392,
+    "duration" : 3075
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]
