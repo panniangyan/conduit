@@ -1,0 +1,111 @@
+[ {
+  "uid" : "25a9834fda2d0f1b",
+  "name" : "test__accept_cookies",
+  "time" : {
+    "start" : 1628030342609,
+    "stop" : 1628030345680,
+    "duration" : 3071
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "dec37362a56dc72c",
+  "name" : "test__delete_article",
+  "time" : {
+    "start" : 1628030444562,
+    "stop" : 1628030464214,
+    "duration" : 19652
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "9786d6fc590e89dd",
+  "name" : "test__pagination",
+  "time" : {
+    "start" : 1628030379557,
+    "stop" : 1628030386018,
+    "duration" : 6461
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "17a9382d4358f8e2",
+  "name" : "test__add_new_article",
+  "time" : {
+    "start" : 1628030388640,
+    "stop" : 1628030399299,
+    "duration" : 10659
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "c8bee857493f463a",
+  "name" : "test__login",
+  "time" : {
+    "start" : 1628030359645,
+    "stop" : 1628030370958,
+    "duration" : 11313
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "686e7d51dca9f662",
+  "name" : "test__logout",
+  "time" : {
+    "start" : 1628030478847,
+    "stop" : 1628030488259,
+    "duration" : 9412
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "70150c321467ea75",
+  "name" : "test__list_data",
+  "time" : {
+    "start" : 1628030372589,
+    "stop" : 1628030377935,
+    "duration" : 5346
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "725af85c3d5a6038",
+  "name" : "test__modify_article",
+  "time" : {
+    "start" : 1628030417261,
+    "stop" : 1628030442931,
+    "duration" : 25670
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "aeb0c75820f870b1",
+  "name" : "test__import_data_from_file",
+  "time" : {
+    "start" : 1628030401928,
+    "stop" : 1628030414622,
+    "duration" : 12694
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "1b791f8926d6aebe",
+  "name" : "test__registration",
+  "time" : {
+    "start" : 1628030348298,
+    "stop" : 1628030357004,
+    "duration" : 8706
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "28d2315897eaeebf",
+  "name" : "test__save_data_to_file",
+  "time" : {
+    "start" : 1628030466830,
+    "stop" : 1628030476228,
+    "duration" : 9398
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]
