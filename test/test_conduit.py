@@ -71,8 +71,8 @@ class TestConduit(object):
 
     # # Test_1 REGISTRATION
     def test__registration(self):
-        user_input = {"Username": "test",
-                      "Email": "user5@hotmail.com",
+        user_input = {"Username": "user2",
+                      "Email": "user2@hotmail.com",
                       "Password": "Userpass1"
                       }
         accept_cookies(self.browser)
