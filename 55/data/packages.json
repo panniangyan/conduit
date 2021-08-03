@@ -1,0 +1,152 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "children" : [ {
+    "name" : "test.test_conduit",
+    "children" : [ {
+      "name" : "test__accept_cookies",
+      "uid" : "d43ea80852a1718a",
+      "parentUid" : "81ae0d23950340ec5f63efa4e29dced0",
+      "status" : "passed",
+      "time" : {
+        "start" : 1628031062599,
+        "stop" : 1628031065744,
+        "duration" : 3145
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "test__registration",
+      "uid" : "5e4b874cf643ee6d",
+      "parentUid" : "81ae0d23950340ec5f63efa4e29dced0",
+      "status" : "passed",
+      "time" : {
+        "start" : 1628031068432,
+        "stop" : 1628031077650,
+        "duration" : 9218
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "test__login",
+      "uid" : "b6926e650252e580",
+      "parentUid" : "81ae0d23950340ec5f63efa4e29dced0",
+      "status" : "passed",
+      "time" : {
+        "start" : 1628031080327,
+        "stop" : 1628031091679,
+        "duration" : 11352
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "test__list_data",
+      "uid" : "1cb13d7d665bd9b7",
+      "parentUid" : "81ae0d23950340ec5f63efa4e29dced0",
+      "status" : "passed",
+      "time" : {
+        "start" : 1628031093310,
+        "stop" : 1628031098699,
+        "duration" : 5389
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "test__pagination",
+      "uid" : "26373876c883f3f9",
+      "parentUid" : "81ae0d23950340ec5f63efa4e29dced0",
+      "status" : "passed",
+      "time" : {
+        "start" : 1628031101344,
+        "stop" : 1628031107882,
+        "duration" : 6538
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "test__add_new_article",
+      "uid" : "dce744adecd506c6",
+      "parentUid" : "81ae0d23950340ec5f63efa4e29dced0",
+      "status" : "passed",
+      "time" : {
+        "start" : 1628031110582,
+        "stop" : 1628031121320,
+        "duration" : 10738
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "test__import_data_from_file",
+      "uid" : "bc1502d4fc23cba5",
+      "parentUid" : "81ae0d23950340ec5f63efa4e29dced0",
+      "status" : "passed",
+      "time" : {
+        "start" : 1628031123987,
+        "stop" : 1628031136779,
+        "duration" : 12792
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "test__modify_article",
+      "uid" : "12621060265852ff",
+      "parentUid" : "81ae0d23950340ec5f63efa4e29dced0",
+      "status" : "passed",
+      "time" : {
+        "start" : 1628031139472,
+        "stop" : 1628031165230,
+        "duration" : 25758
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "test__delete_article",
+      "uid" : "12c80e06da51c5ac",
+      "parentUid" : "81ae0d23950340ec5f63efa4e29dced0",
+      "status" : "failed",
+      "time" : {
+        "start" : 1628031167901,
+        "stop" : 1628031186709,
+        "duration" : 18808
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "test__save_data_to_file",
+      "uid" : "4c5938a287a23de4",
+      "parentUid" : "81ae0d23950340ec5f63efa4e29dced0",
+      "status" : "passed",
+      "time" : {
+        "start" : 1628031189407,
+        "stop" : 1628031198869,
+        "duration" : 9462
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "test__logout",
+      "uid" : "c0ba861690e64940",
+      "parentUid" : "81ae0d23950340ec5f63efa4e29dced0",
+      "status" : "passed",
+      "time" : {
+        "start" : 1628031200532,
+        "stop" : 1628031209985,
+        "duration" : 9453
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "test.test_conduit"
+  } ],
+  "name" : "packages"
+}
