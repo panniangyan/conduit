@@ -1,0 +1,2 @@
+Test_1 SIGNED UP:  Welcome! Your registration was successful!
+Username: user2;Email: user2@hotmail.com;Password: Userpass1;
