@@ -1,0 +1,111 @@
+[ {
+  "uid" : "c0ea874ac231b867",
+  "name" : "test__import_data_from_file",
+  "time" : {
+    "start" : 1628241068075,
+    "stop" : 1628241092852,
+    "duration" : 24777
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "32f2ee1b8929404",
+  "name" : "test__list_data",
+  "time" : {
+    "start" : 1628241044688,
+    "stop" : 1628241050063,
+    "duration" : 5375
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "6793bcdf3b315620",
+  "name" : "test__save_data_to_file",
+  "time" : {
+    "start" : 1628241133082,
+    "stop" : 1628241142524,
+    "duration" : 9442
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "4013b7acb4ca0381",
+  "name" : "test__logout",
+  "time" : {
+    "start" : 1628241144126,
+    "stop" : 1628241151582,
+    "duration" : 7456
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "f37c1239cb098236",
+  "name" : "test__add_new_article",
+  "time" : {
+    "start" : 1628241056718,
+    "stop" : 1628241066487,
+    "duration" : 9769
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "922e43a660b8c726",
+  "name" : "test__delete_article",
+  "time" : {
+    "start" : 1628241115783,
+    "stop" : 1628241131507,
+    "duration" : 15724
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "18916774041c58d8",
+  "name" : "test__modify_article",
+  "time" : {
+    "start" : 1628241094438,
+    "stop" : 1628241114158,
+    "duration" : 19720
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "27c9954620fe8fda",
+  "name" : "test__registration",
+  "time" : {
+    "start" : 1628241027368,
+    "stop" : 1628241036130,
+    "duration" : 8762
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "eb45a9de1740ba97",
+  "name" : "test__login",
+  "time" : {
+    "start" : 1628241036706,
+    "stop" : 1628241044076,
+    "duration" : 7370
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "3a3b0e404e691de8",
+  "name" : "test__accept_cookies",
+  "time" : {
+    "start" : 1628241023487,
+    "stop" : 1628241025674,
+    "duration" : 2187
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "f558eab4d664c0e7",
+  "name" : "test__pagination",
+  "time" : {
+    "start" : 1628241050661,
+    "stop" : 1628241056143,
+    "duration" : 5482
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]
