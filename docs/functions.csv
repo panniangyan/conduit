@@ -1,5 +1,5 @@
 funkció, leirás
-regisztráció:, az alkalmazásba be lehet regisztrálni, név (username), emailcím (email) és jelszó (password) megadásával
+regisztráció:, az alkalmazásba be lehet regisztrálni név (username) emailcím (email) és jelszó (password) megadásával
 bejelentkezés:, az alkalmazásba be lehet jelentkezni egy meglévő felhasználói fiókkal, email cim (email) és jelszó (password) megadásával
 cookie elfogadás:, az alkalmazás tartalmaz sütiket. I accept! gombbal lehet elfogadni
 tag elemek listázása:, az alkalmazásban fel vannak sorolva a használt ta-gek popular tag cimszó alatt. Bejelentkezés nélkül kattintva üres listát hoz be #tag cimmel
