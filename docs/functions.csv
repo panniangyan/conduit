@@ -1,23 +1,23 @@
 funkció, leirás
 regisztráció:, az alkalmazásba be lehet regisztrálni, név (username), emailcím (email) és jelszó (password) megadásával
 bejelentkezés:, az alkalmazásba be lehet jelentkezni egy meglévő felhasználói fiókkal, email cim (email) és jelszó (password) megadásával
-cookie elfogadás:, az alkalmazás tartalmaz sütiket; "I accept!" gombbal lehet elfogadni
+cookie elfogadás:, az alkalmazás tartalmaz sütiket. "I accept!" gombbal lehet elfogadni
 tag elemek listázása:, az alkalmazásban fel vannak sorolva a használt ta-gek "popular tag" cimszó alatt. Bejelentkezés nélkül kattintva üres listát hoz be #tag cimmel
 cikkek listázása:, "global feed" alatt az elérhető cikkek listája található. Bejelentkezés nélkül: "No articles are here"
 Bejelentkezés után:
 cikkek listázása:, "global feed" alatt minden felhasználó minden cikke listázva van. 
 cikkek listázása:, "your feed" alatt minden felhasználó minden cikke listázva van. 
-lapozó: a listák alján megjelennek oldalszámok, végigjárjatók, a cikkek ugyanazok minden oldalon.
-tag elemek listázása: az alkalmazásban fel vannak sorolva a használt ta-gek "popular tag" cimszó alatt. Bejelentkezés után a tag-re kattintva listázza a cikkeket amelyek tartalmazzák, #tag cimmel. Egyszerre csak egy tag-hez tartozó listát lehet csak megjeleniteni. Másikra kattintva felülirja.
-cikkek kedvelése: bejelentkezve a szivecskés ikonnal kedvelni lehet a cikket. Zöld szivecske jelenik meg fehér háttérrel, és a számláló eggyel nő.
+lapozó:, a listák alján megjelennek oldalszámok, végigjárjatók, a cikkek ugyanazok minden oldalon.
+tag elemek listázása:, az alkalmazásban fel vannak sorolva a használt ta-gek "popular tag" cimszó alatt. Bejelentkezés után a tag-re kattintva listázza a cikkeket amelyek tartalmazzák #tag cimmel. Egyszerre csak egy tag-hez tartozó listát lehet csak megjeleniteni. Másikra kattintva felülirja.
+cikkek kedvelése:, bejelentkezve a szivecskés ikonnal kedvelni lehet a cikket. Zöld szivecske jelenik meg fehér háttérrel és a számláló eggyel nő.
 felhasználók cikkeinek listázása:, felhasználó nevére kattintva listázza a cikkeit
 felhasználó követése:, "follow username" gombra kattintva
-új cikk létrehozása:, az alkalmazásban lehet új cikket létrehozni cim, téma, cikk szövege és tag-ek megadásával, automatikusan hozzáadja az aktuális dátumot.
+új cikk létrehozása:, az alkalmazásban lehet új cikket létrehozni cim- téma- cikk szövege és tag-ek megadásával, automatikusan hozzáadja az aktuális dátumot.
 saját cikkek listázása:, felhasználó nevére kattintva. (navbarban nem ezt hozza be...)
 cikkek megtekintése:, a cikk cimére kattintva el lehet olvasni a cikket.
 uj komment irása:, minden cikkhez lehet irni kommentet (mind saját, mind másé) (létrehozás dátuma minden esetben 1970 január 1)
 komment törlése:, lehet törölni azt (nem kér megerősitést) (kommentet nem lehet szerkeszteni)
 cikk módositása:, saját cikket lehet módositani
 cikk törlése:, saját cikket lehet törölni (nem kér megerősitést)
-beállitások:, meg lehet változtatni a felhasználónevet, az email cimet és a jelszót. És megadni pár szót magunkról. (!!! emailt is át lehet irni, ezzel a bejelentkezési adatokat meg lehet változtatni)
+beállitások:, meg lehet változtatni a felhasználónevet- az email cimet és a jelszót. És megadni pár szót magunkról. (!!! emailt is át lehet irni, ezzel a bejelentkezési adatokat meg lehet változtatni)
 kijelentkezés:, az alkalmazásból ki lehet jelentkezni
