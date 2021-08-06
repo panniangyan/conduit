@@ -1,0 +1,1 @@
+Test_7: 5 new articles published from file: test/input_articles.csv Lorem újra, Lorem újra; Sziasztok, Sziasztok; Mindenféle újra, Mindenféle újra; 
