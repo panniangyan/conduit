@@ -90,8 +90,8 @@ class TestConduit(object):
 
     # # Test_1 REGISTRATION
     def test__registration(self):
-        user_input = {"Username": "test",
-                      "Email": "user5@hotmail.com",
+        user_input = {"Username": "user2",
+                      "Email": "user2@hotmail.com",
                       "Password": "Userpass1"
                       }
         accept_cookies(self.browser)
@@ -108,8 +108,8 @@ class TestConduit(object):
         welcome = WebDriverWait(self.browser, 5).until(
             EC.visibility_of_element_located((By.CSS_SELECTOR, ".swal-title"))
         )
-        #assert (welcome.text == ref_text_success)
-        assert (welcome.text == ref_text_fail)
+        assert (welcome.text == ref_text_success)
+        #assert (welcome.text == ref_text_fail)
         print("Test_1 SIGNED UP: ", welcome.text, end=" ")
         if welcome.text == ref_text_success:
             print(self.browser.find_element_by_css_selector(".swal-text").text, sep=" ")
@@ -167,7 +167,7 @@ class TestConduit(object):
 
     # # Test_6 NEW ARTICLE
     def test__add_new_article(self):
-        input_post = ["test", "me", "blabablabal", "key"]
+        input_post = ["New", "me", "blabablabal", "key"]
         article_data = ["Article Title", "What's this article about?", "Write your article (in markdown)", "Enter tags"]
         accept_cookies(self.browser)
         conduit_login(self.browser)
