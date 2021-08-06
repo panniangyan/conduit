@@ -43,7 +43,6 @@ class TestConduit(object):
         browser_options.headless = True
         self.browser = webdriver.Chrome(ChromeDriverManager().install(), options=browser_options)
         self.browser.get(URL)
-        time.sleep(1)
 
     def teardown(self):
         self.browser.quit()
