@@ -183,13 +183,13 @@ class TestConduit(object):
         WebDriverWait(self.browser, 5).until(
              EC.visibility_of_element_located((By.XPATH, '//*[@href="#/@user2/"]'))
         ).click()
-        time.sleep(4)
+        time.sleep(2)
         old_title = WebDriverWait(self.browser, 10).until(
              EC.visibility_of_element_located((By.XPATH, '//*[@class="preview-link"]/h1'))
         )
         title_list.append(old_title.text)
         old_title.click()
-        time.sleep(4)
+        time.sleep(2)
         WebDriverWait(self.browser, 10).until(
             EC.visibility_of_element_located((By.XPATH, '//*[@class="article-meta"]/span/a'))
         ).click()
@@ -219,11 +219,11 @@ class TestConduit(object):
         WebDriverWait(self.browser, 5).until(
             EC.visibility_of_element_located((By.XPATH, '//*[@href="#/@user2/"]'))
         ).click()
-        time.sleep(4)
+        time.sleep(2)
         WebDriverWait(self.browser, 10).until(
             EC.visibility_of_element_located((By.XPATH, '//*[@class="preview-link"]/h1'))
         ).click()
-        time.sleep(4)
+        time.sleep(2)
         deleted_url = self.browser.current_url
         WebDriverWait(self.browser, 5).until(
             EC.visibility_of_element_located((By.XPATH, '//*[@id="app"]/div/div[1]/div/div/span/button/span'))
