@@ -1,2 +1,0 @@
-Found logout button:  Log out
-Test_11 LOGGED OUT, Back to homepage: Sign in

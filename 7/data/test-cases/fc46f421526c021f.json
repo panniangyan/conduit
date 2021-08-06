@@ -1,0 +1,86 @@
+{
+  "uid" : "fc46f421526c021f",
+  "name" : "test__delete_article",
+  "fullName" : "test.test_REMEK_panniangyan_conduit.TestConduit#test__delete_article",
+  "historyId" : "ed40885a74160bd29ba407198c73af3f",
+  "time" : {
+    "start" : 1628238198421,
+    "stop" : 1628238215800,
+    "duration" : 17379
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError: assert 'http://local...olor-sit-amet' == 'http://localhost:1667/#/'\n  - http://localhost:1667/#/\n  + http://localhost:1667/#/articles/lorem-ipsum-dolor-sit-amet",
+  "statusTrace" : "self = <test_REMEK_panniangyan_conduit.TestConduit object at 0x7f55940416a0>\n\n    def test__delete_article(self):\n        accept_cookies(self.browser)\n        conduit_login(self.browser)\n        WebDriverWait(self.browser, 5).until(\n            EC.visibility_of_element_located((By.XPATH, '//*[@href=\"#/@user2/\"]'))\n        ).click()\n        time.sleep(4)\n        WebDriverWait(self.browser, 10).until(\n            EC.visibility_of_element_located((By.XPATH, '//*[@class=\"preview-link\"]/h1'))\n        ).click()\n        time.sleep(4)\n        deleted_url = self.browser.current_url\n        WebDriverWait(self.browser, 5).until(\n            EC.visibility_of_element_located((By.XPATH, '//*[@id=\"app\"]/div/div[1]/div/div/span/button/span'))\n        ).click()\n        time.sleep(5)\n        self.browser.refresh()\n        # assert\n>       assert(self.browser.current_url == 'http://localhost:1667/#/')\nE       AssertionError: assert 'http://local...olor-sit-amet' == 'http://localhost:1667/#/'\nE         - http://localhost:1667/#/\nE         + http://localhost:1667/#/articles/lorem-ipsum-dolor-sit-amet\n\ntest/test_REMEK_panniangyan_conduit.py:233: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "AssertionError: assert 'http://local...olor-sit-amet' == 'http://localhost:1667/#/'\n  - http://localhost:1667/#/\n  + http://localhost:1667/#/articles/lorem-ipsum-dolor-sit-amet",
+    "statusTrace" : "self = <test_REMEK_panniangyan_conduit.TestConduit object at 0x7f55940416a0>\n\n    def test__delete_article(self):\n        accept_cookies(self.browser)\n        conduit_login(self.browser)\n        WebDriverWait(self.browser, 5).until(\n            EC.visibility_of_element_located((By.XPATH, '//*[@href=\"#/@user2/\"]'))\n        ).click()\n        time.sleep(4)\n        WebDriverWait(self.browser, 10).until(\n            EC.visibility_of_element_located((By.XPATH, '//*[@class=\"preview-link\"]/h1'))\n        ).click()\n        time.sleep(4)\n        deleted_url = self.browser.current_url\n        WebDriverWait(self.browser, 5).until(\n            EC.visibility_of_element_located((By.XPATH, '//*[@id=\"app\"]/div/div[1]/div/div/span/button/span'))\n        ).click()\n        time.sleep(5)\n        self.browser.refresh()\n        # assert\n>       assert(self.browser.current_url == 'http://localhost:1667/#/')\nE       AssertionError: assert 'http://local...olor-sit-amet' == 'http://localhost:1667/#/'\nE         - http://localhost:1667/#/\nE         + http://localhost:1667/#/articles/lorem-ipsum-dolor-sit-amet\n\ntest/test_REMEK_panniangyan_conduit.py:233: AssertionError",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "4fc16062107dba4",
+      "name" : "log",
+      "source" : "4fc16062107dba4.txt",
+      "type" : "text/plain",
+      "size" : 344
+    }, {
+      "uid" : "a3735ab42d2f8ebb",
+      "name" : "stderr",
+      "source" : "a3735ab42d2f8ebb.txt",
+      "type" : "text/plain",
+      "size" : 215
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 2,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "test"
+  }, {
+    "name" : "suite",
+    "value" : "test_REMEK_panniangyan_conduit"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestConduit"
+  }, {
+    "name" : "host",
+    "value" : "fv-az74-184"
+  }, {
+    "name" : "thread",
+    "value" : "3730-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test.test_REMEK_panniangyan_conduit"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "fc46f421526c021f.json",
+  "parameterValues" : [ ]
+}
