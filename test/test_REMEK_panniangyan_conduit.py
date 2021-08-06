@@ -25,12 +25,12 @@ def conduit_login(browser):
     for k, v in user_login.items():
         xpath(browser, f'//*[@placeholder="{k}"]').send_keys(v)
     xpath(browser, '//button[1]').click()
-    time.sleep(2)
+    time.sleep(1)
 
 
 def accept_cookies(browser):
     browser.find_element_by_xpath('//button[contains (.,"I accept!")]').click()
-    time.sleep(2)
+    time.sleep(1)
 
 # # # # # # # # # # # # # # # # # # Testing Conduit # # # # # # # # # # # # # # # # # # 
 
