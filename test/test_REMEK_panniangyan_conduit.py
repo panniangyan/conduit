@@ -25,6 +25,7 @@ def conduit_login(browser):
     for k, v in user_login.items():
         xpath(browser, f'//*[@placeholder="{k}"]').send_keys(v)
     xpath(browser, '//button[1]').click()
+    time.sleep(2)
 
 
 def accept_cookies(browser):
@@ -153,7 +154,7 @@ class TestConduit(object):
     def test__import_data_from_file(self):
         accept_cookies(self.browser)
         conduit_login(self.browser)
-        input_file = 'input_article.csv'
+        input_file = '/test/input_article.csv'
         with open(input_file, 'r') as data:
             csv_reader = reader(data)
             input_post = list(map(tuple, csv_reader))
@@ -244,16 +245,16 @@ class TestConduit(object):
         )
         write_to_file.append(user_name.text)
         user_name.click()
-#        out_file = "{user_name.text}_title.csv"
+        out_file = '/test/{user_name.text}_write_out.csv'
         time.sleep(2)
         title = xpath(self.browser, '//*[@class="article-preview"]/a/h1').text
         write_to_file.append(title)
-        with open(f'{user_name.text}_write_out.csv', 'w') as out:
+        with open(out_file, 'w') as out:
             line = "\n".join(write_to_file)
             out.write(line)
         time.sleep(2)
         # assert
-        with open(f'{user_name.text}_write_out.csv', 'r') as file:
+        with open(out_file, 'r') as file:
             list_line = file.read().split("\n")
 #            print(list_line)
         assert (list_line == write_to_file)
