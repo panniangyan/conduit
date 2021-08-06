@@ -1,0 +1,86 @@
+{
+  "uid" : "eebbad007fea50e0",
+  "name" : "test__save_data_to_file",
+  "fullName" : "test.test_REMEK_panniangyan_conduit.TestConduit#test__save_data_to_file",
+  "historyId" : "0aaabc1a5cbf6c0765ec488f3050ae6c",
+  "time" : {
+    "start" : 1628238886275,
+    "stop" : 1628238893718,
+    "duration" : 7443
+  },
+  "status" : "broken",
+  "statusMessage" : "FileNotFoundError: [Errno 2] No such file or directory: '/test/{user_name.text}_write_out.csv'",
+  "statusTrace" : "self = <test_REMEK_panniangyan_conduit.TestConduit object at 0x7fdcf7b85f40>\n\n    def test__save_data_to_file(self):\n        conduit_login(self.browser)\n        accept_cookies(self.browser)\n        write_to_file = []\n        user_name = WebDriverWait(self.browser, 5).until(\n            EC.visibility_of_element_located((By.XPATH, '//*[@class=\"nav-link\" and contains(text(),\"user2\")]'))\n        )\n        write_to_file.append(user_name.text)\n        user_name.click()\n        out_file = '/test/{user_name.text}_write_out.csv'\n        time.sleep(2)\n        title = xpath(self.browser, '//*[@class=\"article-preview\"]/a/h1').text\n        write_to_file.append(title)\n>       with open(out_file, 'w') as out:\nE       FileNotFoundError: [Errno 2] No such file or directory: '/test/{user_name.text}_write_out.csv'\n\ntest/test_REMEK_panniangyan_conduit.py:252: FileNotFoundError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "broken",
+    "statusMessage" : "FileNotFoundError: [Errno 2] No such file or directory: '/test/{user_name.text}_write_out.csv'",
+    "statusTrace" : "self = <test_REMEK_panniangyan_conduit.TestConduit object at 0x7fdcf7b85f40>\n\n    def test__save_data_to_file(self):\n        conduit_login(self.browser)\n        accept_cookies(self.browser)\n        write_to_file = []\n        user_name = WebDriverWait(self.browser, 5).until(\n            EC.visibility_of_element_located((By.XPATH, '//*[@class=\"nav-link\" and contains(text(),\"user2\")]'))\n        )\n        write_to_file.append(user_name.text)\n        user_name.click()\n        out_file = '/test/{user_name.text}_write_out.csv'\n        time.sleep(2)\n        title = xpath(self.browser, '//*[@class=\"article-preview\"]/a/h1').text\n        write_to_file.append(title)\n>       with open(out_file, 'w') as out:\nE       FileNotFoundError: [Errno 2] No such file or directory: '/test/{user_name.text}_write_out.csv'\n\ntest/test_REMEK_panniangyan_conduit.py:252: FileNotFoundError",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "1f50d29eb6c0884",
+      "name" : "log",
+      "source" : "1f50d29eb6c0884.txt",
+      "type" : "text/plain",
+      "size" : 344
+    }, {
+      "uid" : "8b45e0050dc2abd4",
+      "name" : "stderr",
+      "source" : "8b45e0050dc2abd4.txt",
+      "type" : "text/plain",
+      "size" : 215
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 2,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "test"
+  }, {
+    "name" : "suite",
+    "value" : "test_REMEK_panniangyan_conduit"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestConduit"
+  }, {
+    "name" : "host",
+    "value" : "fv-az74-184"
+  }, {
+    "name" : "thread",
+    "value" : "3699-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test.test_REMEK_panniangyan_conduit"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "eebbad007fea50e0.json",
+  "parameterValues" : [ ]
+}

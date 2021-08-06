@@ -1,1 +1,0 @@
-Test_7: 5 new articles published from file: input_article.csv 
