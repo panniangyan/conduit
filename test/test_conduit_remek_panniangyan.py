@@ -167,7 +167,7 @@ class TestConduit(object):
 
     # # Test_6 NEW ARTICLE
     def test__add_new_article(self):
-        input_post = ["New", "me", "blabablabal", "key"]
+        input_post = ["new", "me", "blabablabal", "key"]
         article_data = ["Article Title", "What's this article about?", "Write your article (in markdown)", "Enter tags"]
         accept_cookies(self.browser)
         conduit_login(self.browser)
