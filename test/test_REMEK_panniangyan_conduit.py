@@ -154,7 +154,7 @@ class TestConduit(object):
     def test__import_data_from_file(self):
         accept_cookies(self.browser)
         conduit_login(self.browser)
-        input_file = '/test/input_article.csv'
+        input_file = 'test/input_article.csv'
         with open(input_file, 'r') as data:
             csv_reader = reader(data)
             input_post = list(map(tuple, csv_reader))
@@ -245,7 +245,7 @@ class TestConduit(object):
         )
         write_to_file.append(user_name.text)
         user_name.click()
-        out_file = '/test/{user_name.text}_write_out.csv'
+        out_file = 'test/{user_name.text}_write_out.csv'
         time.sleep(2)
         title = xpath(self.browser, '//*[@class="article-preview"]/a/h1').text
         write_to_file.append(title)
