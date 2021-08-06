@@ -1,0 +1,1 @@
+Test_7: 5 new articles published from file: test/input_article.csv lorem újra, lorem újra; sziasztok, sziasztok; mindenféle újra, mindenféle újra; 
