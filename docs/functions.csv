@@ -14,9 +14,9 @@ felhasználó követése:, follow username gombra kattintva
 új cikk létrehozása:, az alkalmazásban lehet új cikket létrehozni cim- téma- cikk szövege és tag-ek megadásával. Automatikusan hozzáadja az aktuális dátumot.
 saját cikkek listázása:, felhasználó nevére kattintva. (navbarban nem ezt hozza be...)
 cikkek megtekintése:, a cikk cimére kattintva el lehet olvasni a cikket.
-uj komment irása:, minden cikkhez lehet irni kommentet (mind saját, mind másé) (létrehozás dátuma minden esetben 1970 január 1)
+uj komment irása:, minden cikkhez lehet irni kommentet (mind saját mind másé) (létrehozás dátuma minden esetben 1970 január 1)
 komment törlése:, lehet törölni azt (nem kér megerősitést) (kommentet nem lehet szerkeszteni)
 cikk módositása:, saját cikket lehet módositani
 cikk törlése:, saját cikket lehet törölni (nem kér megerősitést)
-beállitások:, meg lehet változtatni a felhasználónevet- az email cimet és a jelszót. És megadni pár szót magunkról. (!!! emailt is át lehet irni, ezzel a bejelentkezési adatokat meg lehet változtatni)
+beállitások:, meg lehet változtatni a felhasználónevet- az email cimet és a jelszót. És megadni pár szót magunkról. (!!! emailt is át lehet irni. Ezzel a bejelentkezési adatokat meg lehet változtatni)
 kijelentkezés:, az alkalmazásból ki lehet jelentkezni
