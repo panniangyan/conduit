@@ -10,7 +10,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-# # defining functions
+# # # ## ## ## # defining functions # ## ## ## ## ## ## ## ## ## #
 
 def xpath(browser, xpath_search):
     return browser.find_element_by_xpath(xpath_search)
@@ -20,39 +20,29 @@ def conduit_login(browser):
     user_login = {"Email": "user2@hotmail.com",
                   "Password": "Userpass1"
                   }
-
     xpath(browser, '//*[@href="#/login"]').click()
     time.sleep(1)
     for k, v in user_login.items():
         xpath(browser, f'//*[@placeholder="{k}"]').send_keys(v)
-    time.sleep(1)
     xpath(browser, '//button[1]').click()
-    time.sleep(1)
 
 
 def accept_cookies(browser):
     browser.find_element_by_xpath('//button[contains (.,"I accept!")]').click()
     time.sleep(2)
 
-# # Testing Conduit
+# # # # # # # # # # # # # # # # # # Testing Conduit # # # # # # # # # # # # # # # # # # 
 
 URL = 'http://localhost:1667'
-PATH = '/usr/bin/chromedriver'
 
 
 class TestConduit(object):
-#    def setup(self):
-#        self.browser = webdriver.Chrome(PATH)
-#        self.browser.get(URL)
-#        self.browser.maximize_window()
-#        time.sleep(1)
 
     def setup(self):
         browser_options = Options()
         browser_options.headless = True
         self.browser = webdriver.Chrome(ChromeDriverManager().install(), options=browser_options)
         self.browser.get(URL)
-        self.browser.maximize_window()
         time.sleep(1)
 
     def teardown(self):
@@ -63,7 +53,6 @@ class TestConduit(object):
         xpath(self.browser, '//button[contains (.,"I accept!")]').click()
         time.sleep(2)
         assert (self.browser.find_elements_by_xpath('//button') == [])
-        time.sleep(1)
         print("Test_3: cookies accepted")
 
     # # Test_1 REGISTRATION
@@ -73,7 +62,6 @@ class TestConduit(object):
                       "Password": "Userpass1"
                       }
         accept_cookies(self.browser)
-
         xpath(self.browser, '//*[@href="#/register"]').click()
         time.sleep(2)
         for k, v in user_input.items():
@@ -97,7 +85,6 @@ class TestConduit(object):
         for k, v in user_input.items():
             print(k, v, sep=": ", end=";")
         xpath(self.browser, '//*[@class="swal-button swal-button--confirm"]').click()
-        time.sleep(1)
 
     # # Test_2 LOGIN user2
     def test__login(self):
@@ -107,21 +94,18 @@ class TestConduit(object):
         accept_cookies(self.browser)
         conduit_login(self.browser)
 
-        time.sleep(5)
+        time.sleep(2)
         # assert
-        #user_name = WebDriverWait(self.browser, 5).until(
-        #    EC.visibility_of_element_located((By.XPATH, '//*[@class="nav-link" and contains(text(),"user2")]'))
-        #)
-        user_name = xpath(self.browser, '//*[@class="nav-link" and contains(text(),"user2")]')
+        user_name = WebDriverWait(self.browser, 5).until(
+            EC.visibility_of_element_located((By.XPATH, '//*[@class="nav-link" and contains(text(),"user2")]'))
+        )
         assert user_name.text == "user2"
         print(f"Test_2 SIGNED IN: as {user_name.text}")
-        time.sleep(1)
 
     # # Test_4 DATA LISTING
     def test__list_data(self):
         accept_cookies(self.browser)
         conduit_login(self.browser)
-
         active_links = self.browser.find_elements_by_xpath('//*[@href="#/"]')
         # assert
         assert(xpath(self.browser, '//*[@href="#/"]') == active_links[0])
@@ -133,7 +117,6 @@ class TestConduit(object):
     def test__pagination(self):
         conduit_login(self.browser)
         accept_cookies(self.browser)
-        # pagination on global feed
         print(f"Test_5 PAGINATION:", end=" ")
         page_list = self.browser.find_elements_by_class_name("page-link")
         for page in page_list:
@@ -143,13 +126,11 @@ class TestConduit(object):
         last_page = xpath(self.browser, f'//*[@class="page-item active" and @data-test="page-link-{page.text}"]')
         assert (page.text == last_page.text)
         print(f"last page: #{last_page.text}")
-        time.sleep(1)
 
     # # Test_6 NEW ARTICLE
     def test__add_new_article(self):
         input_post = ["test", "me", "blabablabal", "key"]
         article_data = ["Article Title", "What's this article about?", "Write your article (in markdown)", "Enter tags"]
-
         accept_cookies(self.browser)
         conduit_login(self.browser)
         xpath(self.browser, '//*[@href="#/editor"]').click()
@@ -168,7 +149,6 @@ class TestConduit(object):
         publish_date = self.browser.find_element_by_class_name("date")
         assert (published_title.text == input_post[0])
         print(f"Test_6 New article published with title: \" {published_title.text} \" on {publish_date.text} at {self.browser.current_url}")
-        time.sleep(1)
 
     # # Test_7 IMPORT DATA FROM FILE
     def test__import_data_from_file(self):
@@ -192,14 +172,13 @@ class TestConduit(object):
             published_title = xpath(self.browser, '//*[@class="container"]/h1')
             assert (published_title.text == input_post[i][0])
             print(f"{published_title.text}, {input_post[i][0]}", sep=", ", end="; ")
-        time.sleep(1)
 
 # # Test_8 MODIFY POST (title)
     def test__modify_article(self):
         accept_cookies(self.browser)
         conduit_login(self.browser)
         title_list = []
-        title = "OhLALA"
+        title = "Title modified"
         title_list.append(title)
         WebDriverWait(self.browser, 5).until(
              EC.visibility_of_element_located((By.XPATH, '//*[@href="#/@user2/"]'))
@@ -270,12 +249,12 @@ class TestConduit(object):
         time.sleep(2)
         title = xpath(self.browser, '//*[@class="article-preview"]/a/h1').text
         write_to_file.append(title)
-        with open(f'{user_name.text}_title.csv', 'w') as out:
+        with open(f'{user_name.text}_write_out.csv', 'w') as out:
             line = "\n".join(write_to_file)
             out.write(line)
         time.sleep(2)
         # assert
-        with open(f'{user_name.text}_title.csv', 'r') as file:
+        with open(f'{user_name.text}_write_out.csv', 'r') as file:
             list_line = file.read().split("\n")
 #            print(list_line)
         assert (list_line == write_to_file)
@@ -293,6 +272,5 @@ class TestConduit(object):
         sign_in_btn = xpath(self.browser, '//*[@href="#/login"]')
         assert(sign_in_btn.text == 'Sign in')
         print("Test_11 LOGGED OUT, Back to homepage:", sign_in_btn.text)
-        time.sleep(2)
 
 
