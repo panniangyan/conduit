@@ -1,0 +1,86 @@
+{
+  "uid" : "d0a112c5578e764d",
+  "name" : "test__import_data_from_file",
+  "fullName" : "test.test_conduit_remek_panniangyan.TestConduit#test__import_data_from_file",
+  "historyId" : "6a7d75777dc5ebe3c2fac9e30ae76379",
+  "time" : {
+    "start" : 1628255460040,
+    "stop" : 1628255465384,
+    "duration" : 5344
+  },
+  "status" : "broken",
+  "statusMessage" : "FileNotFoundError: [Errno 2] No such file or directory: 'test/input_articles.csv'",
+  "statusTrace" : "self = <test_conduit_remek_panniangyan.TestConduit object at 0x7f24566c26d0>\n\n    def test__import_data_from_file(self):\n        accept_cookies(self.browser)\n        conduit_login(self.browser)\n        input_file = 'test/input_articles.csv'\n>       with open(input_file, 'r') as data:\nE       FileNotFoundError: [Errno 2] No such file or directory: 'test/input_articles.csv'\n\ntest/test_conduit_remek_panniangyan.py:200: FileNotFoundError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "broken",
+    "statusMessage" : "FileNotFoundError: [Errno 2] No such file or directory: 'test/input_articles.csv'",
+    "statusTrace" : "self = <test_conduit_remek_panniangyan.TestConduit object at 0x7f24566c26d0>\n\n    def test__import_data_from_file(self):\n        accept_cookies(self.browser)\n        conduit_login(self.browser)\n        input_file = 'test/input_articles.csv'\n>       with open(input_file, 'r') as data:\nE       FileNotFoundError: [Errno 2] No such file or directory: 'test/input_articles.csv'\n\ntest/test_conduit_remek_panniangyan.py:200: FileNotFoundError",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "3f7af4b75b8db922",
+      "name" : "log",
+      "source" : "3f7af4b75b8db922.txt",
+      "type" : "text/plain",
+      "size" : 344
+    }, {
+      "uid" : "82ff49aeb75add3c",
+      "name" : "stderr",
+      "source" : "82ff49aeb75add3c.txt",
+      "type" : "text/plain",
+      "size" : 215
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 2,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "test"
+  }, {
+    "name" : "suite",
+    "value" : "test_conduit_remek_panniangyan"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestConduit"
+  }, {
+    "name" : "host",
+    "value" : "fv-az74-184"
+  }, {
+    "name" : "thread",
+    "value" : "3811-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test.test_conduit_remek_panniangyan"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "d0a112c5578e764d.json",
+  "parameterValues" : [ ]
+}
