@@ -1,0 +1,26 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "selenium.common.exceptions.InvalidSelectorException: Message: invalid selector: Unable to locate an element with the xpath expression //div[@class=\"container\"/h1 because of the following error:\nSyntaxError: Failed to execute 'evaluate' on 'Document': The string '//div[@class=\"container\"/h1' is not a valid XPath expression.\n  (Session info: headless chrome=92.0.4515.131)",
+      "children" : [ {
+        "name" : "test__home_page",
+        "uid" : "41fc2ed1e8364267",
+        "parentUid" : "d6dfbf1505d7809b450b175a83e36f92",
+        "status" : "broken",
+        "time" : {
+          "start" : 1628332845570,
+          "stop" : 1628332847617,
+          "duration" : 2047
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "d6dfbf1505d7809b450b175a83e36f92"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ],
+  "name" : "categories"
+}
