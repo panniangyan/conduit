@@ -71,8 +71,8 @@ class TestConduit(object):
 # # # # # # # # # # # # # # # # # # # # # # # # Test_0 HOMEPAGE LOADED # # # # # # # # # # # # # # # # # # # # # # # #         
     def test__home_page(self):
         time.sleep(2)
-        assert self.browser.find_element_by_xpath('//div[@class="container"/h1').text == "conduit"
-        assert self.browser.find_element_by_xpath('//div[@class="container"/p').text == "A place to share your knowledge."
+        assert self.browser.find_element_by_xpath('//div[@class="container"]/h1').text == "conduit"
+        assert self.browser.find_element_by_xpath('//div[@class="container"]/p').text == "A place to share your knowledge."
         print("conduit HOMEPAGE loaded, self.browser.current_url")
 
 # # # # # # # # # # # # # # # # # # # # # # # # Test_3 ACCEPT COOKIES # # # # # # # # # # # # # # # # # # # # # # # # 
