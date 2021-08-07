@@ -19,7 +19,7 @@ def xpath(browser, xpath_search):
 
 def homepage(browser):
     time.sleep(2)
-    print("conduit HOMEPAGE loaded", browser.current_url)
+    print(f"conduit HOMEPAGE loaded", {browser.current_url})
 
 
 def accept_cookies(browser):
