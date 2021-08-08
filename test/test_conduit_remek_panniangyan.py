@@ -55,6 +55,18 @@ def add_new_article(browser, input_post):
 
 URL = 'http://localhost:1667'
 
+user_input = {"Username": "user2",
+              "Email": "user2@hotmail.com",
+              "Password": "Userpass1"
+             }
+
+user_login = {"Email": "user2@hotmail.com",
+              "Password": "Userpass1"
+             }
+                      
+                      
+                      
+
 
 class TestConduit(object):
 
@@ -85,10 +97,7 @@ class TestConduit(object):
 
 # # # # # # # # # # # # # # # # # # # # # # # # Test_1 REGISTRATION # # # # # # # # # # # # # # # # # # # # # # # # 
     def test__registration(self):
-        user_input = {"Username": "user2",
-                      "Email": "user2@hotmail.com",
-                      "Password": "Userpass1"
-                      }
+
         accept_cookies(self.browser)
         xpath(self.browser, '//*[@href="#/register"]').click()
         time.sleep(2)
@@ -117,9 +126,6 @@ class TestConduit(object):
  # # # # # # # # # # # # # # # # # # # # # # # # Test_2 LOGIN user2 # # # # # # # # # # # # # # # # # # # # # # # # 
     def test__login(self):
         accept_cookies(self.browser)
-        user_login = {"Email": "user2@hotmail.com",
-                      "Password": "Userpass1"
-                      }
         xpath(self.browser, '//*[@href="#/login"]').click()
         time.sleep(1)
         for k, v in user_login.items():
@@ -137,9 +143,9 @@ class TestConduit(object):
 # # # # # # # # # # # # # # # # # # # # # # # # Test_4 DATA LISTING # # # # # # # # # # # # # # # # # # # # # # # # 
     def test__list_data(self):
         accept_cookies(self.browser)
-        user_login = {"Email": "user2@hotmail.com",
-                      "Password": "Userpass1"
-                     }
+ #       user_login = {"Email": "user2@hotmail.com",
+  #                    "Password": "Userpass1"
+   #                  }
         conduit_login(self.browser, user_login)
         active_links = self.browser.find_elements_by_xpath('//*[@href="#/"]')
         # assert
@@ -151,9 +157,9 @@ class TestConduit(object):
 # # # # # # # # # # # # # # # # # # # # # # # # Test_5 PAGINATION # # # # # # # # # # # # # # # # # # # # # # # # 
     def test__pagination(self):
         accept_cookies(self.browser)
-        user_login = {"Email": "user2@hotmail.com",
-                      "Password": "Userpass1"
-                     }
+#        user_login = {"Email": "user2@hotmail.com",
+ #                     "Password": "Userpass1"
+  #                   }
         conduit_login(self.browser, user_login)
         # pagination on global feed
         print(f"Test_5 PAGINATION:", end=" ")
