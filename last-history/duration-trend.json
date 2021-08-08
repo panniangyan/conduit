@@ -1,8 +1,6 @@
 [ {
-  "buildOrder" : 27,
-  "reportUrl" : "https://panniangyan.github.io/conduit/27/",
+  "buildOrder" : 28,
+  "reportUrl" : "https://panniangyan.github.io/conduit/28/",
   "reportName" : "Allure Report with history",
-  "data" : {
-    "duration" : 154180
-  }
+  "data" : { }
 } ]
