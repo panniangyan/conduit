@@ -73,8 +73,8 @@ input_post_modify = ["Old title", "én", "lorem ipsum újra meg újra", "kulcs"]
 title = "Módositom a cimet"
 # Test_9 delete data
 input_post_delete = ["Might be deleted", "én", "lorem ipsum újra meg újra", "kulcs"]
-# Test_10 write to file
-out_file = f"test/{user_name.text}_write_out.csv"
+
+
 
 # # # # # # # # # # # # # # # # # # # # # # # # Testing Conduit App # # # # # # # # # # # # # # # # # # # # # # # #
 
@@ -291,6 +291,7 @@ class TestConduit(object):
         time.sleep(2)
         title = xpath(self.browser, '//*[@class="article-preview"]/a/h1').text
         write_to_file.append(title)
+        out_file = f"test/{user_name.text}_write_out.csv"
         with open(out_file, 'w') as out:
             line = "\n".join(write_to_file)
             out.write(line)
