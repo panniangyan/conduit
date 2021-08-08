@@ -51,7 +51,7 @@ def add_new_article(browser, input_post):
         EC.visibility_of_element_located((By.XPATH, '//button[1]'))).click()
 
 
-# # # # # # # # # # # # # # # # # # # # # # # # Testing Conduit App # # # # # # # # # # # # # # # # # # # # # # # # 
+# # # # # # # # # # # # # # # # # # # # # # # # Defining variables # # # # # # # # # # # # # # # # # # # # # # # # 
 
 URL = 'http://localhost:1667'
 
@@ -63,10 +63,20 @@ user_input = {"Username": "user2",
 user_login = {"Email": "user2@hotmail.com",
               "Password": "Userpass1"
              }
-                      
-                      
-                      
 
+# Test_6 new post
+input_post = ["new", "me", "blabablabal", "key"]  
+# Test_7 import data from file
+input_file = 'test/input_articles.csv'
+# Test_8 modify data
+input_post_modify = ["Old title", "én", "lorem ipsum újra meg újra", "kulcs"]
+title = "Módositom a cimet"
+# Test_9 delete data
+input_post_delete = ["Might be deleted", "én", "lorem ipsum újra meg újra", "kulcs"]
+# Test_10 write to file
+out_file = f"test/{user_name.text}_write_out.csv"
+
+# # # # # # # # # # # # # # # # # # # # # # # # Testing Conduit App # # # # # # # # # # # # # # # # # # # # # # # #
 
 class TestConduit(object):
 
@@ -85,7 +95,7 @@ class TestConduit(object):
         time.sleep(2)
         assert self.browser.find_element_by_xpath('//div[@class="container"]/h1').text == "conduit"
         assert self.browser.find_element_by_xpath('//div[@class="container"]/p').text == "A place to share your knowledge."
-        print("conduit HOMEPAGE loaded, self.browser.current_url")
+        print(f"conduit HOMEPAGE loaded, {self.browser.current_url}")
 
 # # # # # # # # # # # # # # # # # # # # # # # # Test_3 ACCEPT COOKIES # # # # # # # # # # # # # # # # # # # # # # # # 
     def test__accept_cookies(self):
@@ -93,11 +103,10 @@ class TestConduit(object):
         time.sleep(2)
         assert (self.browser.find_elements_by_xpath('//button') == [])
         time.sleep(1)
-        print("Test_3: cookies accepted")
+        print("Test_3: Cookies accepted")
 
 # # # # # # # # # # # # # # # # # # # # # # # # Test_1 REGISTRATION # # # # # # # # # # # # # # # # # # # # # # # # 
     def test__registration(self):
-
         accept_cookies(self.browser)
         xpath(self.browser, '//*[@href="#/register"]').click()
         time.sleep(2)
@@ -143,10 +152,8 @@ class TestConduit(object):
 # # # # # # # # # # # # # # # # # # # # # # # # Test_4 DATA LISTING # # # # # # # # # # # # # # # # # # # # # # # # 
     def test__list_data(self):
         accept_cookies(self.browser)
- #       user_login = {"Email": "user2@hotmail.com",
-  #                    "Password": "Userpass1"
-   #                  }
         conduit_login(self.browser, user_login)
+        # listing active links on homepage
         active_links = self.browser.find_elements_by_xpath('//*[@href="#/"]')
         # assert
         assert(xpath(self.browser, '//*[@href="#/"]') == active_links[0])
@@ -157,9 +164,6 @@ class TestConduit(object):
 # # # # # # # # # # # # # # # # # # # # # # # # Test_5 PAGINATION # # # # # # # # # # # # # # # # # # # # # # # # 
     def test__pagination(self):
         accept_cookies(self.browser)
-#        user_login = {"Email": "user2@hotmail.com",
- #                     "Password": "Userpass1"
-  #                   }
         conduit_login(self.browser, user_login)
         # pagination on global feed
         print(f"Test_5 PAGINATION:", end=" ")
@@ -174,12 +178,8 @@ class TestConduit(object):
 
 # # # # # # # # # # # # # # # # # # # # # # # # Test_6 NEW ARTICLE # # # # # # # # # # # # # # # # # # # # # # # # 
     def test__add_new_article(self):
-        input_post = ["new", "me", "blabablabal", "key"]
         article_data = ["Article Title", "What's this article about?", "Write your article (in markdown)", "Enter tags"]
         accept_cookies(self.browser)
-        user_login = {"Email": "user2@hotmail.com",
-                      "Password": "Userpass1"
-                     }
         conduit_login(self.browser, user_login)
         xpath(self.browser, '//*[@href="#/editor"]').click()
         time.sleep(2)
@@ -197,19 +197,13 @@ class TestConduit(object):
         # assert
         published_title = xpath(self.browser, '//*[@class="container"]/h1')
         publish_date = self.browser.find_element_by_class_name("date")
-#        assert (published_title.text == input_post[0])
-        assert (self.browser.current_url == f'http://localhost:1667/#/articles/{input_post[0]}')
-
+        assert (self.browser.current_url == f'http://localhost:1667/#/articles/{input_post[0]}'
         print(f"Test_6 New article published with title: \" {published_title.text} \" on {publish_date.text} at {self.browser.current_url}")
 
 # # # # # # # # # # # # # # # # # # # # # # # # Test_7 IMPORT DATA FROM FILE # # # # # # # # # # # # # # # # # # # # # # # # 
     def test__import_data_from_file(self):
         accept_cookies(self.browser)
-        user_login = {"Email": "user2@hotmail.com",
-                      "Password": "Userpass1"
-                     }
         conduit_login(self.browser, user_login)
-        input_file = 'test/input_articles.csv'
         with open(input_file, 'r') as data:
             csv_reader = reader(data)
             input_post = list(map(tuple, csv_reader))
@@ -226,19 +220,14 @@ class TestConduit(object):
             # assert
             published_title = xpath(self.browser, '//*[@class="container"]/h1')
             assert (published_title.text == input_post[i][0])
-            print(f"{published_title.text}, {input_post[i][0]}", sep=", ", end="; ")
+            print(f"{published_title.text}", sep=", ", end="; ")
 
 # # # # # # # # # # # # # # # # # # # # # # # # Test_8 MODIFY POST (title) # # # # # # # # # # # # # # # # # # # # # # # # 
     def test__modify_article(self):
         accept_cookies(self.browser)
-        user_login = {"Email": "user2@hotmail.com",
-                      "Password": "Userpass1"
-                     }
         conduit_login(self.browser, user_login)
-        input_post = ["miről fogunk beszélni", "én", "lorem ipsum újra meg újra", "kulcs"]
-        add_new_article(self.browser, input_post)
+        add_new_article(self.browser, input_post_modify)
         title_list = []
-        title = "Módositom a cimet"
         title_list.append(title)
         WebDriverWait(self.browser, 5).until(
              EC.visibility_of_element_located((By.XPATH, '//*[@href="#/@user2/"]'))
@@ -275,12 +264,8 @@ class TestConduit(object):
 # # # # # # # # # # # # # # # # # # # # # # # # Test_9 DELETE ARTICLE # # # # # # # # # # # # # # # # # # # # # # # # 
     def test__delete_article(self):
         accept_cookies(self.browser)
-        user_login = {"Email": "user2@hotmail.com",
-                      "Password": "Userpass1"
-                     }
         conduit_login(self.browser, user_login)
-        input_post = ["miről fogunk beszélni", "én", "lorem ipsum újra meg újra", "kulcs"]
-        add_new_article(self.browser, input_post)
+        add_new_article(self.browser, input_post_delete)
         time.sleep(2)
         deleted_url = self.browser.current_url
         WebDriverWait(self.browser, 5).until(
@@ -296,9 +281,6 @@ class TestConduit(object):
 # # # # # # # # # # # # # # # # # # # # # # # # Test_10 SAVE DATA # # # # # # # # # # # # # # # # # # # # # # # # 
     def test__save_data_to_file(self):
         accept_cookies(self.browser)
-        user_login = {"Email": "user2@hotmail.com",
-                      "Password": "Userpass1"
-                     }
         conduit_login(self.browser, user_login)
         write_to_file = []
         user_name = WebDriverWait(self.browser, 5).until(
@@ -306,7 +288,6 @@ class TestConduit(object):
         )
         write_to_file.append(user_name.text)
         user_name.click()
-        out_file = f"test/{user_name.text}_write_out.csv"
         time.sleep(2)
         title = xpath(self.browser, '//*[@class="article-preview"]/a/h1').text
         write_to_file.append(title)
@@ -323,9 +304,6 @@ class TestConduit(object):
 # # # # # # # # # # # # # # # # # # # # # # # # Test_11 LOGOUT (user2) # # # # # # # # # # # # # # # # # # # # # # # #
     def test__logout(self):
         accept_cookies(self.browser)
-        user_login = {"Email": "user2@hotmail.com",
-                      "Password": "Userpass1"
-                     }
         conduit_login(self.browser, user_login)
         logout_btn = xpath(self.browser, '//*[@class="nav-link" and contains(text(),"Log out")]')
         assert(logout_btn.text == ' Log out')
