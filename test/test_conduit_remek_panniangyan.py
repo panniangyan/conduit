@@ -197,8 +197,8 @@ class TestConduit(object):
         # assert
         published_title = xpath(self.browser, '//*[@class="container"]/h1')
         publish_date = self.browser.find_element_by_class_name("date")
-        assert (self.browser.current_url == f'http://localhost:1667/#/articles/{input_post[0]}'
-        print(f"Test_6 New article published with title: \" {published_title.text} \" on {publish_date.text} at {self.browser.current_url}")
+        assert (self.browser.current_url == f'http://localhost:1667/#/articles/{input_post[0]}')
+        print(f"Test_6 New article published with title: \"{published_title.text}\" on {publish_date.text} at {self.browser.current_url}")
 
 # # # # # # # # # # # # # # # # # # # # # # # # Test_7 IMPORT DATA FROM FILE # # # # # # # # # # # # # # # # # # # # # # # # 
     def test__import_data_from_file(self):
