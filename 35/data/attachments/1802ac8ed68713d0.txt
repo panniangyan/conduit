@@ -1,0 +1,1 @@
+Test_10: WRITE OUT DATA TO FILE, test/user2_write_out.csv: user2, Lorem ipsum dolor sit amet
